@@ -1,7 +1,7 @@
 // ROUTES FOR DISPLAYING + SAVING DATA TO DB
 
 // DEPENDENCIES
-var orm = require("../config/orm.js");
+// var orm = require("../config/orm.js");
 
 // ROUTES
 module.exports = function(app){

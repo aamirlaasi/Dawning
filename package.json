@@ -16,5 +16,9 @@
     "url": "https://github.com/aamirlaasi/Dawning/issues"
   },
   "homepage": "https://github.com/aamirlaasi/Dawning#readme",
-  "dependencies": {}
+  "dependencies": {
+    "@datafire/squareup": "^2.0.4",
+    "datafire": "^2.16.1",
+    "express": "^4.16.1"
+  }
 }

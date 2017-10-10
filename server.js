@@ -17,8 +17,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 app.use(express.static("app/public"));
 
 // ROUTES
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes")(app);
+// require("./routes/api-routes.js")(app);
+// require("./routes/html-routes")(app);
+
+require("./public/js/square.js");
 
 // LISTENER
 app.listen(PORT, function(){
