@@ -1,0 +1,19 @@
+body {
+    background-color: #ADD8E6;
+}
+
+.hero {
+    background-color: white;
+}
+
+.break {
+    height: 200px;
+}
+
+#hand {
+    font-size: 40px;
+}
+
+.infoBlock {
+    background-color: grey;
+}
