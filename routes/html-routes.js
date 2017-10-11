@@ -13,15 +13,15 @@ module.exports = function(app){
     
 	// Each of the below routes just handles the HTML page that the user gets sent to.
 
-	// Index route loads view.html
+	// Index route loads index.html
     app.get("/", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/view.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
     // Add route loads add.html
-    app.get("/add", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/add.html"));
-    });
+    // app.get("/add", function(req, res){
+    //     res.sendFile(path.join(__dirname, "../public/add.html"));
+    // });
 
     
-}
+};
