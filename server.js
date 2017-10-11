@@ -27,7 +27,7 @@ app.use(express.static("app/public"));
 // ROUTES
 // =============================================================
 // require("./routes/api-routes.js")(app);
-// require("./routes/html-routes")(app);
+require("./routes/html-routes.js")(app);
 
 require("./public/js/square.js");
 
