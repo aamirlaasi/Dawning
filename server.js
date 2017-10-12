@@ -22,11 +22,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 
 // STATIC DIRECTORY TO BE SERVED
-app.use(express.static("app/public"));
+app.use(express.static("public"));
 
 // ROUTES
 // =============================================================
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 require("./public/js/square.js");
