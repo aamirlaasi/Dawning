@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CHILDCARE WEBSITE</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assests/css/style.css">
+
+    <script type="text/javascript" src="../js/childinfo.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Main Header -->
+  
+
+    <!-- Main Body Container -->
+    <div class="container">
+  <nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+     <div class="navbar-header">
+      <a class="navbar-brand" href="#">ENROLLMENT PAGES</a>
+     </div>
+    <ul class="nav navbar-nav">
+       <li class="active"><a href="#">CHILD INFORMATION</a></li>
+       <li><a href="#">PARENTS AND CONTACTS</a></li>
+       <li><a href="#">MEDICAL AND BEHAVIORAL</a></li>
+       <li><a href="#">FINANCIAL</a></li>
+     </ul>
+  </div>
+</nav>
+       
+
+<div class="panel panel-default">
+<div class="panel-heading panel-custom">Child Information</div>
+
+  <div class="childInfo">
+      <div class="panel-body">
+          <form>
+            <div class="form-group col-md-3" >
+              <label>Last Name:</label>
+              <input type="text" class="form-control" id="Child_Last_Name" required>
+              </div>
+              <div class="form-group col-md-3">
+                  <label>First Name:</label>
+                  <input type="text" class="form-control" id="Child_First_Name" required>
+              </div>
+              <div class="form-group col-md-2">
+                   <label>Birthday:</label>
+                    <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="Child_Birth" required>
+              </div>
+
+
+    <div class="form-group col-md-2">
+  <label>Gender:</label>
+  <select class="form-control">
+    <option></option>
+   <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+</div>
+
+ <div class="form-group col-md-2">
+     <label>Race:</label>
+   <select class="form-control">
+        <option></option>
+        <option>Black</option>
+        <option>White</option>
+        <option>Asian</option>
+        <option>Hispanic</option>
+        <option>Eastern</option>
+        <option>Other</option>
+  </select>
+  </div>
+
+  <div class="form-group col-md-4 selectContainer" >
+        <label>Class Room</label>
+<select class="form-control selectpicker show-tick" title="Class Room">>
+  <option>Infant Room</option>
+  <option>Transitional</option>
+  <option>Two Year Olds</option>
+  <option>Three Year Olds</option>
+  <option>PreSchool</option>
+  <option>After School</option>
+</select>
+ </div>
+
+
+<div class="form-group col-md-4 selectContainer" >
+        <label>School Child Attends</label>
+<select class="form-control selectpicker show-tick" title="School Attends">>
+  <option>Whidby</option>
+  <option>Foster</option>
+  <option>Thompson</option>
+  <option>Bastian</option>
+  <option>Kipp Peace</option>
+  <option>Young</option>
+</select>
+ </div>
+
+  </div> <!--customer info end div-->
+
+
+<div class = "doctor-info"> <!--doctor div -->
+ <div class="form-group col-md-3" >
+                        <label>Doctor Name:</label>
+                        <input type="text" class="form-control" id="doctor_name" required>
+                    </div>
+                      <div class="form-group col-md-3">
+                        <label>Doctor Address:</label>
+                        <input type="text" class="form-control" id="doctor_address" required>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Doctor Phone:</label>
+                        <input type="text" class="form-control" id="doctor_phone" required>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Emergency Hospital Preference:</label>
+                        <input type="text" class="form-control" id="hospital_pref" required>
+                    </div>
+
+</div> <!--medical end div -->
+
+<div class = "arrival-departure"> <!--arrival departure div -->
+
+<div class="form-group col-md-2">
+    <label>Child Arrival Time:</label>
+    <select class="form-control selectpicker show-tick" title="Arrive Time" id="arrive_time" required>
+    <option>6:00</option>
+    <option>7:00</option>
+    <option>8:00</option>
+    <option>9:00</option>
+    <option>9:30</option>
+</select>
+</div>
+
+
+<div class="form-group col-md-2">
+    <label>Child Departure Time:</label>
+    <select class="form-control selectpicker show-tick" title="Depart Time" id="depart_time" required>
+    <option>1:00</option>
+    <option>2:00</option>
+    <option>3:00</option>
+    <option>4:00</option>
+    <option>5:00</option>
+    <option>6:00</option>
+    <option>6:30</option>
+</select>
+</div>
+
+
+<div class="form-group col-md-2 selectContainer" >
+        <label>Part / Full Day</label>
+<select class="form-control selectpicker show-tick" title="Full or Part Time">
+  <option>Part Day</option>
+  <option>Full Day</option>
+</select>
+ </div>
+
+<div class="form-group col-md-3 selectContainer" >
+        <label>Days Child Attends</label>
+<select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Days">
+  <option>Mon</option>
+  <option>Tues</option>
+  <option>Wed</option>
+  <option>Thurs</option>
+  <option>Fri</option>
+</select>
+ </div>
+
+ </div> <!--arrival departure end div -->
+
+
+
+ <div class= "food-potty">
+
+<div class="form-group col-md-3 selectContainer" >
+        <label>Meals Child Will Participate:</label>
+<select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Meals">
+  <option>Breakfast</option>
+  <option>AM Snack</option>
+  <option>Lunch</option>
+  <option>PM Snack</option>
+ </select>
+
+ </div>
+
+<div class="form-group col-md-4 selectContainer" >
+        <label>Completly Potty Trained</label>
+<select class="form-control selectpicker show-tick" title="Potty Trained">>
+  <option>Yes</option>
+  <option>No</option>
+</select>
+ </div>
+
+ </div> <!--food potty end div -->
+
+
+
+
+<div class = "allergy-info-1"> <!--allergy info div -->
+
+
+<div class= "form-group col-md-3">
+      <label>Does Your Child Have Any Known Allergies:</label>
+<label class="radio-inline"><input type="radio" id ="allergyyes" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="allergyno" value = "no">No</label>
+</div>
+
+
+<div id="al1" class="form-group">
+ <div class= "form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_1">
+    <option></option>
+   <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+  </select>
+</div>
+  
+ <div class="form-group col-md-5">
+    <label>How Should We Respond:</label>
+    <input type="text" class="form-control" id="allergy_response1">
+  </div>
+
+<div class= "form-group col-md-2">
+      <label>Any More Allergies:</label>
+<label class="radio-inline"><input type="radio" id ="moal1" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="nomoal1" value = "no">No</label>
+</div>
+
+</div>
+
+
+<div id="al2" class="form-group col-md-12">
+
+   <div class="form-group col-md-3"></div>
+
+       
+  <div class="form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_2">
+    <option></option>
+   <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+  </select>
+</div>
+
+
+ <div class="form-group col-md-5">
+    <label>How Should We Respond:</label>
+    <input type="text" class="form-control" id="allergy_response2">
+</div>
+
+ <div class= "form-group col-md-2">
+    <label>Any More Allergies:</label>
+    <label class="radio-inline"><input type="radio" id ="moal2" value = "yes">Yes</label>
+    <label class="radio-inline"><input type="radio" id ="nomoal1" value = "no">No</label>
+</div>
+
+
+</div>
+
+
+<div id="al3" class="form-group col-md-12">
+
+   <div class="form-group col-md-3"></div>
+
+    
+  <div class="form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_3">
+    <option></option>
+   <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+  </select>
+</div>
+
+
+ <div class="form-group col-md-5">
+    <label>How Should We Respond:</label>
+    <input type="text" class="form-control" id="allergy_response3">
+</div>
+
+ <div class= "form-group col-md-2">
+    <label>Any More Allergies:</label>
+    <label class="radio-inline"><input type="radio" id ="moal3" value = "yes">Yes</label>
+    <label class="radio-inline"><input type="radio" id ="nomoal1" value = "no">No</label>
+</div>
+
+</div>
+
+
+<div id="al4" class="form-group col-md-12">
+
+   <div class="form-group col-md-3"></div>
+
+  <div class="form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_4">
+    <option></option>
+   <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+  </select>
+</div>
+
+
+ <div class="form-group col-md-5">
+    <label>How Should We Respond:</label>
+    <input type="text" class="form-control" id="allergy_response4">
+</div>
+
+</div> <!--allergy info 1 div end -->
+
+
+<div class = "allergy-info-2">
+
+<div class = "medical-info">
+
+ <div class= "form-group col-md-2"></div>
+
+<div id="medques">
+ <div class= "form-group col-md-3">
+      <label>Does Child Have Any Medical Conditions:</label>
+<label class="radio-inline"><input type="radio" id ="medicalyes" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="medicalno" value = "no">No</label>
+</div>
+</div>
+
+
+</div>
+
+
+
+<div id="drugques">
+ <div class= "form-group col-md-3">
+      <label>Does Child Take Any Continuous Medications:</label>
+<label class="radio-inline"><input type="radio" id ="medicineyes" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="medicineno" value = "no">No</label>
+</div>
+</div>
+
+<div id="otrques">
+ <div class= "form-group col-md-3">
+      <label>Any Other Conditions to Describe:</label>
+<label class="radio-inline"><input type="radio" id ="otheryes" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="otherno" value = "no">No</label>
+</div>
+</div>
+
+    <div id="dontsee">
+
+ 
+
+ <div class="form-group col-md-4">
+  <label for="sel1">Allergies:</label>
+  <select class="form-control" id="Allergy_3">
+    <option></option>
+   <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+  </select>
+</div>
+
+ <div class="form-group col-md-8">
+                        <label>How Should We Respond:</label>
+                        <input type="text" class="form-control" id="allergy_response3">
+                    </div>
+
+
+
+  <div class="form-group col-md-4">
+  <label for="sel1">Allergies:</label>
+  <select class="form-control" id="Allergy_4">
+    <option></option>
+   <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+  </select>
+</div>
+
+ <div class="form-group col-md-8">
+                        <label>How Should We Respond:</label>
+                        <input type="text" class="form-control" id="allergy_response4">
+                    </div>
+
+
+ <div class="form-group col-md-4">
+                        <label>Medical Condiion:</label>
+                        <input type="text" class="form-control" id="medical_condition_1">
+                    </div>
+
+  <div class="form-group col-md-8">
+                        <label>How Should We Respond::</label>
+                        <input type="text" class="form-control" id="medical_response_1">
+                    </div>
+
+                    <div class="btn-group" role="group">
+                        <button type="button" id="btn-add" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Submit</button>
+                    </div>
+
+</div> <!--allergy info 2-->
+
+</div>
+
+
+
+
+                </form>
+            </div>
+        
+        </div>
+
+    </div>
+
+    <script src="assests/javascript/app.js"></script>
+</body>
+
+</html>
