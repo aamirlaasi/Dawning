@@ -18,10 +18,10 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
-    // Add route loads add.html
-    // app.get("/add", function(req, res){
-    //     res.sendFile(path.join(__dirname, "../public/add.html"));
-    // });
+    // addchild route loads childmain.html
+    app.get("/addchild", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/childmain.html"));
+    });
 
     
 };

@@ -1,0 +1,41 @@
+.heroTitle {
+    font-size: 200px;
+}
+
+.title {
+    top: 50%;
+    transform: translateY(30%);
+}
+
+.nav-link {
+    color: black;
+}
+
+body {
+    background-color: #0fe9c4;
+}
+
+.break {
+    height: 50px;
+}
+
+#btn-add1,
+#btn-add2,
+#btn-add3,
+#btn-add4 {
+    color: white;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+#linkBtn {
+    color: white;
+}
+
+#linkBtn:hover {
+    text-decoration: none;
+}
+
+#padding {
+    padding-bottom: 10px;
+}
