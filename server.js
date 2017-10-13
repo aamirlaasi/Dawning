@@ -6,6 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var sequelize = require("sequelize");
 
 // SET UP EXPRESS
 // =============================================================
@@ -26,12 +27,14 @@ app.use(bodyParser.json({
 }));
 
 // STATIC DIRECTORY TO BE SERVED
-app.use(express.static("public"));
+app.use(express.static("public/css"));
+app.use(express.static("views"));
 
 // ROUTES
 // =============================================================
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+
 
 
 // Syncing our sequelize models and then starting our Express app

@@ -20,7 +20,7 @@ module.exports = function(app){
 
     // addchild route loads childmain.html
     app.get("/addchild", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/childmain.html"));
+        res.sendFile(path.join(__dirname, "../public/childmainONE.html"));
     });
 
     
