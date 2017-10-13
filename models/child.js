@@ -10,12 +10,23 @@ module.exports = function(sequelize, DataTypes) {
     CHILD_FIRSTNAME: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1]
+      validate: {
+        len: [1]
+      }
     },
-    CHILD_MIDDLEINT: {
+    // CHILD_MIDDLEINT: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   len: [1]    }
+    BIRTHDAY: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1]    }
+      validate: {
+        len: [1]
+      }
+    }, 
+  }, {
+    freezeTableName: true
   });
   return Child;
 };
