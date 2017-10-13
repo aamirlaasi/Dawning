@@ -39,3 +39,11 @@ body {
 #padding {
     padding-bottom: 10px;
 }
+
+.margin {
+    margin-top: 25px;
+}
+
+#titleColor {
+    color: #f5f5f5;
+}

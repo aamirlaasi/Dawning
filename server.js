@@ -6,12 +6,19 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+<<<<<<< HEAD
 var sequelize = require("sequelize");
+=======
+var session = require("express-session");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
+>>>>>>> 2d8f79355d308b47036bc386179f26720bae7ec2
 
 // SET UP EXPRESS
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+var db = require("./models");
 
 // Requiring our models for syncing
 var db = require("./models");
