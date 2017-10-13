@@ -1,87 +1,92 @@
+$(document).ready(function () {
 
-$(document).ready(function(){
-	$("#dontsee").hide();
-	$("#al1").hide();
-	$("#al2").hide();
-	$("#al3").hide();
-	$("#al4").hide();
-	$("#medques").hide();
-	$("#drugques").hide();
-	$("#otrques").hide();
-    $("#allergyyes").click(function(){
-    	console.log("jss")
-        $("#al1").show();
-    });
+    $("#al1").hide();
+    $("#pg3").hide();
+    $("#pg4").hide();
 });
 
-    $("#allergyno").click(function(){
-    	console.log("jss")
-        $("#medques").show();
-    });
 
-     $("#moal1").click(function(){
-    	console.log("jss")
-        $("#al2").show();
-    });
-  $("#moal2").click(function(){
-    	console.log("jss")
-        $("#al3").show();
-    });
-
- $("#moal3").click(function(){
-    	console.log("jss")
-        $("#al4").show();
-          $("#medques").show();
-    });
 
 $('.selectpicker').selectpicker({
-  size: 10
+    size: 10
 });
-
 
 
 
 function myFunction() {
     var x = document.getElementById("child_last_name");
     x.value = x.value.toUpperCase();
- var x = document.getElementById("child_first_name");
+    var x = document.getElementById("child_first_name");
     x.value = x.value.toUpperCase();
- var x = document.getElementById("child_last_name");
+    var x = document.getElementById("hospital_pref");
     x.value = x.value.toUpperCase();
- var x = document.getElementById("child_last_name");
+    var x = document.getElementById("doctor_name");
     x.value = x.value.toUpperCase();
- var x = document.getElementById("doctor_name");
+    var x = document.getElementById("doctor_address");
     x.value = x.value.toUpperCase();
- var x = document.getElementById("doctor_address");
-    x.value = x.value.toUpperCase();
-
-
-
-
-
-
-
-
 }
-$("#btn-add").click(function(){
+
+
+
+
+$("#btn-add1").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").show();
+    var splittedFormData = $("#myyform").serialize().split('&');
+
+    console.log(splittedFormData)
+
+});
+
+
+$("#btn-add2").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").hide();
+    $("#pg3").show();
+
+
+    console.log(splittedFormData)
+
+});
+
+$("#btn-add3").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").hide();
+    $("#pg3").hide();
+    $("#pg4").show();
+
+
+    console.log(splittedFormData)
+
+});
+
+
+
+
+
+
+$("#btn-add").click(function () {
 
     var text = document.getElementById("child_last_name").innerHTML;
     document.getElementById("child_last_name").innerHTML = text.toUpperCase();
 
- //$("#btn-add").click(function(){
+    //$("#btn-add").click(function(){
 
     console.log(text)
 
-//var wasup = $('#myyform').serialize();
-//console.log($('#myyform').serialize());
+    //var wasup = $('#myyform').serialize();
+    //console.log($('#myyform').serialize());
 
-//console.log(wasup)
+    //console.log(wasup)
 
- //var jsonArray = [];
+    //var jsonArray = [];
 
-   var splittedFormData = $("#myyform").serialize().split('&');
+    var splittedFormData = $("#myyform").serialize().split('&');
 
-  //          $.each(splittedFormData, function (key, value) {
+    //          $.each(splittedFormData, function (key, value) {
 
     //            item = {};
     //          var splittedValue = value.split('=');               
@@ -89,13 +94,13 @@ $("#btn-add").click(function(){
     ///          item["value"] = splittedValue[1];
     //         jsonArray.push(item);
 
-      //      });
+    //      });
 
-//   console.log(jsonArray)
+    //   console.log(jsonArray)
 
 
-   console.log(splittedFormData)
-  // ...this is where we’d actually do something with the form data...
+    console.log(splittedFormData)
+    // ...this is where we’d actually do something with the form data...
 
 
 });

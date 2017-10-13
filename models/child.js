@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Child = sequelize.define("child", {
     child_LASTNAME: {
       type: DataTypes.STRING,
@@ -15,7 +15,8 @@ module.exports = function(sequelize, DataTypes) {
     CHILD_MIDDLEINT: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1]    }
+      len: [1]
+    }
   });
   return Child;
 };
