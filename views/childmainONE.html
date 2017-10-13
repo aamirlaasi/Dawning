@@ -39,168 +39,186 @@
     <div class="container">
       <div class="break"></div>
 
-
-      <div class="panel ">
-        <div class="panel-heading panel-custom" id="panelHead">
-          <h4>
-            <strong></strong>Child Information</strong>
-          </h4>
+      <div class="panel">
+        <div class="panel-heading panel-custom">
+          <h3>Child Information</h3>
         </div>
 
         <div class="panel-body">
+
           <div id="frst1" class="form-group">
-            <div class="form-group col-md-3">
-              <label>Last Name:</label>
-              <input type="text" class="form-control" name="child_last_name" id="child_last_name" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-3">
-              <label>First Name:</label>
-              <input type="text" class="form-control" name="child_first_name" id="child_first_name" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-2">
-              <label>Birthday:</label>
-              <input type="date" class="form-control" placeholder="mm/dd/yyyy" name="child_birth" id="Child_Birth" required>
-            </div>
+
+            <div class="form-group col-md-12">
+              <div class="form-group col-md-3">
+                <label>Last Name:</label>
+                <input type="text" class="form-control" name="child_last_name" id="child_last_name" onkeyup="myFunction()" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label>First Name:</label>
+                <input type="text" class="form-control" name="child_first_name" id="child_first_name" onkeyup="myFunction()" required>
+              </div>
+              <div class="form-group col-md-2">
+                <label>Birthday:</label>
+                <input type="date" class="form-control" placeholder="mm/dd/yyyy" name="child_birth" id="child_birth" required>
+              </div>
 
 
-            <div class="form-group col-md-2">
-              <label>Gender:</label>
-              <select class="form-control" name="gender">
-                <option></option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-              </select>
-            </div>
+              <div class="form-group col-md-2">
+                <label>Gender:</label>
+                <select class="form-control" name="gender" id="gender">
+                  <option></option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
 
 
-            <div class="form-group col-md-2">
-              <label>Race:</label>
-              <select class="form-control" name="race">
-                <option></option>
-                <option>Black</option>
-                <option>White</option>
-                <option>Asian</option>
-                <option>Hispanic</option>
-                <option>Eastern</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-3">
-              <label>Doctor Name:</label>
-              <input type="text" class="form-control" name="doctor_name" id="doctor_name" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-3">
-              <label>Doctor Address:</label>
-              <input type="text" class="form-control" name="doctor_address" id="doctor_address" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-3">
-              <label>Doctor Phone:</label>
-              <input type="text" class="form-control" name="doctor_phone" required>
-            </div>
-            <div class="form-group col-md-3">
-              <label>Emergency Hospital Preference:</label>
-              <input type="text" class="form-control" name="hospital_pref" name="hospital_pref" onkeyup="myFunction()" required>
-            </div>
-
-            <div class="form-group col-md-2">
-              <label>Child Arrival Time:</label>
-              <select class="form-control selectpicker show-tick" title="Arrive Time" name="arrive_time" required>
-                <option>6:00</option>
-                <option>7:00</option>
-                <option>8:00</option>
-                <option>9:00</option>
-                <option>9:30</option>
-              </select>
-            </div>
-
-
-            <div class="form-group col-md-2">
-              <label>Child Departure Time:</label>
-              <select class="form-control selectpicker show-tick" title="Depart Time" name="depart_time" required>
-                <option>1:00</option>
-                <option>2:00</option>
-                <option>3:00</option>
-                <option>4:00</option>
-                <option>5:00</option>
-                <option>6:00</option>
-                <option>6:30</option>
-              </select>
-            </div>
-
-
-            <div class="form-group col-md-2 selectContainer">
-              <label>Part / Full Day</label>
-              <select class="form-control selectpicker show-tick" title="Full or Part Time" name="foptime">
-                <option>Part Day</option>
-                <option>Full Day</option>
-              </select>
-            </div>
-
-            <div class="form-group col-md-3 selectContainer">
-              <label>Days Child Attends</label>
-              <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Days" name="attenddays">
-                <option>Mon</option>
-                <option>Tues</option>
-                <option>Wed</option>
-                <option>Thurs</option>
-                <option>Fri</option>
-              </select>
-            </div>
-
-
-            <div class="form-group col-md-3 selectContainer">
-              <label>Meals Child Will Participate:</label>
-              <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Meals" name="meals">
-                <option>Breakfast</option>
-                <option>AM Snack</option>
-                <option>Lunch</option>
-                <option>PM Snack</option>
-              </select>
+              <div class="form-group col-md-2">
+                <label>Race:</label>
+                <select class="form-control" name="race" id="race">
+                  <option></option>
+                  <option>Black</option>
+                  <option>White</option>
+                  <option>Asian</option>
+                  <option>Hispanic</option>
+                  <option>Eastern</option>
+                  <option>Other</option>
+                </select>
+              </div>
 
             </div>
 
 
+            <div class="form-group col-md-12">
+              <div class="form-group col-md-3">
+                <label>Doctor Name:</label>
+                <input type="text" class="form-control" name="doctor_name" id="doctor_name" onkeyup="myFunction()" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label>Doctor Address:</label>
+                <input type="text" class="form-control" name="doctor_address" id="doctor_address" onkeyup="myFunction()" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label>Doctor Phone:</label>
+                <input type="text" class="form-control" id="doctor_phone" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label>Emergency Hospital Preference:</label>
+                <input type="text" class="form-control" name="hospital_pref" id="hospital_pref" onkeyup="myFunction()" required>
+              </div>
 
-            <div class="form-group col-md-4 selectContainer">
-              <label>Completly Potty Trained</label>
-              <select class="form-control selectpicker show-tick" title="Potty Trained" name="pottyt">
-                <option>Yes</option>
-                <option>No</option>
-              </select>
             </div>
 
-            <div class="form-group col-md-4 selectContainer">
-              <label>Class Room</label>
-              <select class="form-control selectpicker show-tick" title="Class Room" name="classroom">
-                <option>Infant Room</option>
-                <option>Transitional</option>
-                <option>Two Year Olds</option>
-                <option>Three Year Olds</option>
-                <option>PreSchool</option>
-                <option>After School</option>
-              </select>
+            <div class="form-group col-md-12">
+              <div class="form-group col-md-2">
+                <label>Child Arrival Time:</label>
+                <select class="form-control selectpicker show-tick" title="Arrive Time" id="arrive_time" required>
+                  <option>6:00</option>
+                  <option>7:00</option>
+                  <option>8:00</option>
+                  <option>9:00</option>
+                  <option>9:30</option>
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-2">
+                <label>Child Departure Time:</label>
+                <select class="form-control selectpicker show-tick" title="Depart Time" id="depart_time" required>
+                  <option>1:00</option>
+                  <option>2:00</option>
+                  <option>3:00</option>
+                  <option>4:00</option>
+                  <option>5:00</option>
+                  <option>6:00</option>
+                  <option>6:30</option>
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-2 selectContainer">
+                <label>Part / Full Day</label>
+                <select class="form-control selectpicker show-tick" title="Full or Part Time" id="foptime">
+                  <option>Part Day</option>
+                  <option>Full Day</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3 selectContainer">
+                <label>Days Child Attends</label>
+                <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Days" id="attenddays">
+                  <option>Mon</option>
+                  <option>Tues</option>
+                  <option>Wed</option>
+                  <option>Thurs</option>
+                  <option>Fri</option>
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-3 selectContainer">
+                <label>Meals Child Will Participate:</label>
+                <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Meals" id="meals">
+                  <option>Breakfast</option>
+                  <option>AM Snack</option>
+                  <option>Lunch</option>
+                  <option>PM Snack</option>
+                </select>
+
+              </div>
+
             </div>
 
+            <div class="form-group col-md-12">
+
+              <div class="form-group col-md-3 selectContainer">
+                <label>Completly Potty Trained</label>
+                <select class="form-control selectpicker show-tick" title="Potty Trained" id="potty">
+                  <option>Yes</option>
+                  <option>No</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3 selectContainer">
+                <label>Class Room</label>
+                <select class="form-control selectpicker show-tick" title="Class Room" id="classroom">
+                  <option>Infant Room</option>
+                  <option>Transitional</option>
+                  <option>Two Year Olds</option>
+                  <option>Three Year Olds</option>
+                  <option>PreSchool</option>
+                  <option>After School</option>
+                </select>
+              </div>
 
 
-            <div class="form-group col-md-4 selectContainer">
-              <label>School Child Attends</label>
-              <select class="form-control selectpicker show-tick" title="School Attends" name="schoolattend">
-                <option>Whidby</option>
-                <option>Foster</option>
-                <option>Thompson</option>
-                <option>Bastian</option>
-                <option>Kipp Peace</option>
-                <option>Young</option>
-              </select>
+
+              <div class="form-group col-md-3 selectContainer">
+                <label>School Child Attends</label>
+                <select class="form-control selectpicker show-tick" title="School Attends" id="schoolattend">
+                  <option>Whidby</option>
+                  <option>Foster</option>
+                  <option>Thompson</option>
+                  <option>Bastian</option>
+                  <option>Kipp Peace</option>
+                  <option>Young</option>
+                </select>
+              </div>
+
+
+              <div class="form-group col-md-3">
+                <label>Enroll Date:</label>
+                <input type="date" class="form-control" name="enroll_date" id="enroll_date" required>
+              </div>
+
             </div>
 
             <div class="btn-group" role="group">
               <button type="button" id="btn-add1" class="btn btn-primary">
                 <span class="glyphicon glyphicon-ok"></span>Save and Continue</button>
             </div>
+
 
 
           </div>
@@ -432,7 +450,6 @@
 
 
 
-
             <div class="form-group col-md-12">
               <h3>Subsidy Information</h3>
 
@@ -460,11 +477,10 @@
 
 
             <div class="btn-group" role="group">
-              <button type="button" id="btn-add4 customButton"  class="btn btn-primary">
+              <button type="button" id="btn-add4" class="btn btn-primary">
                 <span class="glyphicon glyphicon-ok"></span>Save Enroll Information</button>
             </div>
           </div>
-          
 
         </div>
 
@@ -472,17 +488,9 @@
 
       </div>
 
-      
-
   </form>
-  <a href="./index.html">HOME</a>
+
   <script src="../public/js/childmain.js"></script>
-
-  
-
-  
-
-  
 </body>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
@@ -490,31 +498,31 @@
 <button id="customButton">Purchase</button>
 
 <script>
-var handler = StripeCheckout.configure({
-  key: 'pk_test_pS1AgpHyxfjsqwB6Ltl1uYAJ',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-  locale: 'auto',
-  token: function(token) {
-    // You can access the token ID with `token.id`.
-    // Get the token ID to your server-side code for use.
-    console.log(token.id);
-  }
-});
-
-document.getElementById('customButton').addEventListener('click', function(e) {
-  // Open Checkout with further options:
-  handler.open({
-    name: 'Demo Site',
-    description: '2 widgets',
-    amount: 10000
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_pS1AgpHyxfjsqwB6Ltl1uYAJ',
+    image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+    locale: 'auto',
+    token: function (token) {
+      // You can access the token ID with `token.id`.
+      // Get the token ID to your server-side code for use.
+      console.log(token.id);
+    }
   });
-  e.preventDefault();
-});
 
-// Close Checkout on page navigation:
-window.addEventListener('popstate', function() {
-  handler.close();
-});
+  document.getElementById('customButton').addEventListener('click', function (e) {
+    // Open Checkout with further options:
+    handler.open({
+      name: 'Demo Site',
+      description: '2 widgets',
+      amount: 10000
+    });
+    e.preventDefault();
+  });
+
+  // Close Checkout on page navigation:
+  window.addEventListener('popstate', function () {
+    handler.close();
+  });
 </script>
 
 </html>
