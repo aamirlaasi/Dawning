@@ -18,43 +18,33 @@ module.exports = function (app) {
     });
 
     // addchild route loads childmain.html
-<<<<<<< HEAD
-    app.get("/addchild", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/childmainONE.html"));
-    });
-=======
     app.get("/addchild", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/childmain.html"));
->>>>>>> 2d8f79355d308b47036bc386179f26720bae7ec2
 
-<<<<<<< HEAD
+        if (req.user) {
+            res.redirect("/members");
+        }
+        res.sendFile(path.join(__dirname, "../public/signup.html"));
+    });
 
-=======
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
+    app.get("/login", function (req, res) {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            res.redirect("/members");
+        }
+        res.sendFile(path.join(__dirname, "../public/login.html"));
+    });
 
-  app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
-  });
+    // Here we've add our isAuthenticated middleware to this route.
+    // If a user who is not logged in tries to access this route they will be redirected to the signup page
+    app.get("/members", isAuthenticated, function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/members.html"));
+    });
 
     //});
     // Add route loads add.html
-    app.get("/add", function(req, res){
+    app.get("/add", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/add.html"));
     });
-    
->>>>>>> 30d09161e056a149eff144e7bbca5553da383320
+
 };
