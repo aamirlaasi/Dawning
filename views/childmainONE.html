@@ -432,6 +432,7 @@
 
 
 
+
             <div class="form-group col-md-12">
               <h3>Subsidy Information</h3>
 
@@ -459,10 +460,11 @@
 
 
             <div class="btn-group" role="group">
-              <button type="button" id="btn-add4" class="btn btn-primary">
+              <button type="button" id="btn-add4 customButton"  class="btn btn-primary">
                 <span class="glyphicon glyphicon-ok"></span>Save Enroll Information</button>
             </div>
           </div>
+          
 
         </div>
 
@@ -470,9 +472,49 @@
 
       </div>
 
+      
+
   </form>
   <a href="./index.html">HOME</a>
   <script src="../public/js/childmain.js"></script>
+
+  
+
+  
+
+  
 </body>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="customButton">Purchase</button>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_pS1AgpHyxfjsqwB6Ltl1uYAJ',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+    console.log(token.id);
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'Demo Site',
+    description: '2 widgets',
+    amount: 10000
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
 
 </html>
