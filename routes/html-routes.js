@@ -13,10 +13,14 @@ module.exports = function(app){
     
 	// Each of the below routes just handles the HTML page that the user gets sent to.
 
-	// Index route loads view.html
+	// Index route loads index.html
     app.get("/", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/view.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
 
+    // addchild route loads childmain.html
+    app.get("/addchild", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/childmain.html"));
 
     if (req.user) {
       res.redirect("/members");

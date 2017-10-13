@@ -1,25 +1,41 @@
-// ROUTES FOR DISPLAYING + SAVING DATA TO DB
+// *********************************************************************************
+// api-routes.js - this file offers a set of routes for displaying and saving data to the db
+// *********************************************************************************
 
-// DEPENDENCIES
-// var orm = require("../config/orm.js");
+// Dependencies
+// =============================================================
 
 var db = require("../models");
 var passport = require("../config/passport");
 
 // ROUTES
+// =============================================================
 module.exports = function(app){
-    app.get("route", function(req, res) {
-        // search parent if found check and display kids
-    });
+    // app.get("route", function(req, res) {
+    //     // search parent if found check and display kids
+    // });
 
 
-    app.post("route", function(req, res){
+    // app.post("route", function(req, res){
 
-        var parent = req.body;
+    //     var parent = req.body;
 
-        orm.addParent(parent, function(data){
-            console.log(data);
-        });
+    //     orm.addParent(parent, function(data){
+    //         console.log(data);
+    //     });
+    // });
+    
+    // POST route for saving new child information
+    app.post("/api/child", function(req, res) {
+    	console.log(req.body);
+    	db.Child.create({
+    		child_LASTNAME: req.body.child_LASTNAME,
+    		CHILD_FIRSTNAME: req.body.CHILD_FIRSTNAME,
+    		CHILD_MIDDLEINT: req.body.CHILD_MIDDLEINT
+    	})
+    	.then(function(dbChild){
+    		res.json(dbChild);
+    	});
     });
 
     app.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -70,4 +86,6 @@ module.exports = function(app){
   });
 
 
-};
+
+
+}
