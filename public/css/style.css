@@ -1,5 +1,5 @@
 .heroTitle {
-    font-size: 200px;
+    font-size: 150px;
 }
 
 .title {
@@ -38,4 +38,12 @@ body {
 
 #padding {
     padding-bottom: 10px;
+}
+
+.margin {
+    margin-top: 25px;
+}
+
+#titleColor {
+    color: #f5f5f5;
 }
