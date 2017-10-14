@@ -17,12 +17,11 @@ module.exports = function(app){
     app.post("/api/child", function(req, res) {
     	console.log(req.body);
     	db.child.create({
-    		child_LASTNAME: req.body.child_LASTNAME,
-    		CHILD_FIRSTNAME: req.body.CHILD_FIRSTNAME,
-   //  		// CHILD_MIDDLEINT: req.body.CHILD_MIDDLEINT,
-    		BIRTHDAY: req.body.BIRTHDAY
-   //  		// CLASSROOM: req.body.CLASSROOM,
-   //  		// SCHOOL: req.body.SCHOOL,
+    		child_LASTNAME: req.body.child_last_name,
+    		CHILD_FIRSTNAME: req.body.child_first_name,
+    		// CHILD_MIDDLEINT: req.body.CHILD_MIDDLEINT,
+    		BIRTHDAY: req.body.child_birth
+    	// SCHOOL: req.body.SCHOOL,
 			// // ENROLL_DATE: req.body.ENROLL_DATE,
 			// // DROP_DATE: req.body.DROP_DATE,
 			// // TEACHER: req.body.TEACHER,
@@ -69,7 +68,6 @@ module.exports = function(app){
     		res.json(dbChild);
     	});
     });
-}
 
     app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
@@ -118,7 +116,11 @@ module.exports = function(app){
     }
   });
 
-
-
-
 }
+
+
+
+
+
+
+
