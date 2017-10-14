@@ -138,7 +138,9 @@ $("#btn-add4").click(function () {
         parentData.end_care_date = $("#end_care_date").val()
 
     console.log(parentData)
-
+    
+    // Send child information to the database
+    submitChild(childData);
 });
 
 // Submits a new child and brings user to addchild page upon completion
@@ -159,7 +161,6 @@ function submitParent(Parent) {
 
 
 // These have to be executed with on.click function
-// submitChild(childData);
 // submitParent(parentData);
 
 

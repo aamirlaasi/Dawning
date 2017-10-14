@@ -16,12 +16,12 @@ module.exports = function (app) {
 
     // Index route loads index.html
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"));
+        res.sendFile(path.join(__dirname, "../views/index.html"));
     });
 
     // addchild route loads childmain.html
     app.get("/addchild", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/childmain.html"));
+        res.sendFile(path.join(__dirname, "../views/childmain.html"));
 
         if (req.user) {
             res.redirect("/members");
