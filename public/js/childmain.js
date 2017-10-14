@@ -162,7 +162,7 @@ $("#btn-add4").click(function () {
     submitChild(childData);
     // Send parent information to the database
     // This is not the right place to execute this call
-    // submitParent(parentData);
+    submitParent(parentData);
 });
 
 // Submits a new child and brings user to addchild page upon completion

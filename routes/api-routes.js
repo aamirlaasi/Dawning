@@ -76,6 +76,47 @@ module.exports = function(app){
     	});
     });
 
+    // POST route for saving new parent information
+    app.post("/api/parent", function(req, res) {
+      console.log(req.body);
+      db.PARENT.create({
+        PRIM_PARENT_LASTNAME:req.body.parent_last_name,
+        PRIM_PARENT_FIRSTNAME: req.body.parent_first_name,
+        PRIM_PARENT_PHONE_1: req.body.parent1_phone_1,
+        PRIM_PARENT_PHONE_2: req.body.parent1_phone_2,
+        // PRIM_PARENT_EMAIL: req.body.parent1_email,
+        SEC_PARENT_LASTNAME: req.body.parent2_last_name,
+        SEC_PARENT_FIRSTNAME: req.body.parent2_first_name,
+        SEC_PARENT_PHONE_1: req.body.parent2_phone_1,
+        SEC_PARENT_PHONE_2: req.body.parent2_phone_2,
+        ADDRESS: req.body.address,
+        CITY: req.body.city,
+        ZIP: req.body.zip,
+        EMR_CONTACT1_NAME: req.body.emergency1_name,
+        EMR_CONTACT1_PHONE1: req.body.emergency1_phone_1,
+        EMR_CONTACT1_PHONE2: req.body.emergency1_phone_2,
+        EMR_CONTACT1_ADDRESS: req.body.emergency1_address,
+        EMR_CONTACT2_NAME: req.body.emergency2_name,
+        EMR_CONTACT2_PHONE1: req.body.emergency2_phone_1,
+        EMR_CONTACT2_PHONE2: req.body.emergency2_phone_2,
+        EMR_CONTACT3_NAME: req.body.emergency3_name,
+        EMR_CONTACT3_PHONE1: req.body.emergency3_phone_1,
+        EMR_CONTACT3_PHONE2: req.body.emergency3_phone_2,
+        EMR_CONTACT4_NAME: req.body.emergency4_name,
+        EMR_CONTACT4_PHONE1: req.body.emergency4_phone_1,
+        EMR_CONTACT4_PHONE2: req.body.emergency4_phone_2,
+        // NCI_TERM_DATE: , 
+        PAY_FREQUENCY: req.body.pay_frequency,
+        START_DATE: req.body.start_date,
+        TUITION_AMOUNT: req.body.tuition_amt,
+        AUTHORIZE_DATE: req.body.authorize_date,
+        END_CARE_DATE: req.body.end_care_date    
+      })
+      .then(function(dbParent){
+        res.json(dbParent);
+      });
+    });
+
     app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end

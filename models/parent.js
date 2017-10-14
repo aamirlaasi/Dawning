@@ -28,13 +28,13 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]    
       }
     },
-    PRIM_PARENT_EMAIL: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]    
-      }
-    },
+    // PRIM_PARENT_EMAIL: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]    
+    //   }
+    // },
     SEC_PARENT_LASTNAME: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -259,13 +259,13 @@ module.exports = function (sequelize, DataTypes) {
     //     len: [1]
     //   }      
     // },
-    NCI_TERM_DATE: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }      
-    },
+    // NCI_TERM_DATE: {
+    //   type: DataTypes.DATEONLY,
+    //   allowNull: false,
+    //   validate: {
+    //     len: [1]
+    //   }      
+    // },
     // NCI_AUTHORIZATION: {
     //   type: DataTypes.STRING,
     //   allowNull: false,
