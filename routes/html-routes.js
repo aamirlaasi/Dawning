@@ -20,14 +20,19 @@ module.exports = function (app) {
     });
 
     // Registration route loads childmain.html where user will can enter child/parent information.
-    app.get("/registration", function (req, res) {
+    app.get("/Registration", function (req, res) {
         res.sendFile(path.join(__dirname, "../views/childmain.html"));
 
-        if (req.user) {
-            res.redirect("/members");
-        }
-        res.sendFile(path.join(__dirname, "../public/signup.html"));
+        // if (req.user) {
+        //     res.redirect("/members");
+        // }
+        // res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
+
+    // About route loads About.html
+    app.get("/About", function(req,res){
+        res.sendFile(path.join(__dirname, "../views/about.html"))
+    })
 
     app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
@@ -45,8 +50,8 @@ module.exports = function (app) {
 
     //});
     // Add route loads add.html
-    app.get("/add", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/add.html"));
-    });
+    // app.get("/add", function (req, res) {
+    //     res.sendFile(path.join(__dirname, "../public/add.html"));
+    // });
 
 };
