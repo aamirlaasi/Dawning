@@ -15,6 +15,7 @@ stripe.charges.create({
   }, function(err, charge) {
     // asynchronously called
     console.log("I've stolen your credit card information! haha");
+    console.log(token);
   });
 
 
