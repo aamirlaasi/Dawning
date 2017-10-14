@@ -62,7 +62,7 @@ $("#btn-add1").click(function () {
         classroom: $("#classroom").val(),
         school_attend: $("#school_attend").val(),
         potty: $("#potty").val(),
-        enroll_date: ("#enroll_date").val()
+        enroll_date: $("#enroll_date").val()
 
 
     };
