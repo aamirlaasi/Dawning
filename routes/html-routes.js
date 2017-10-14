@@ -19,8 +19,8 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../views/index.html"));
     });
 
-    // addchild route loads childmain.html
-    app.get("/addchild", function (req, res) {
+    // Registration route loads childmain.html where user will can enter child/parent information.
+    app.get("/registration", function (req, res) {
         res.sendFile(path.join(__dirname, "../views/childmain.html"));
 
         if (req.user) {
