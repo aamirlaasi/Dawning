@@ -29,7 +29,7 @@ app.use(bodyParser.json({
 }));
 
 // STATIC DIRECTORY TO BE SERVED
-app.use(express.static("public/css"));
+app.use(express.static("public"));
 app.use(express.static("views"));
 
 // ROUTES
