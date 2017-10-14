@@ -120,6 +120,7 @@ $("#btn-add3").click(function () {
         parent2_first_name: $("#parent2_first_name").val(),
         parent2_phone_1: $("#parent2_phone_1").val(),
         parent2_phone_2: $("#parent2_phone_2").val(),
+        email_address: $("email_address").val(),
         emergency1_name: $("#emergency1_name").val(),
         emergency1_address: $("#emergency1_address").val(),
         emergency1_phone_1: $("#emergency1_phone_1").val(),
@@ -146,15 +147,14 @@ $("#btn-add4").click(function () {
     // the last button is clicked
     $("#frst1").hide();
     $("#al1").hide();
-    $("#pg3").show();
+    $("#pg3").hide();
 
 
     parentData.tuition_amt = $("#tuition_amt").val(),
-    parentData.pay_frequency = $("#pay_frequency").val(),
-    parentData.pay_credit = $("#pay_credit").val(),
-    parentData.start_date = $("#start_date").val(),
-    parentData.authorize_date = $("#authorize_date").val(),
-    parentData.end_care_date = $("#end_care_date").val()
+        parentData.pay_frequency = $("#pay_frequency").val(),
+        parentData.start_date = $("#start_date").val(),
+        parentData.authorize_date = $("#authorize_date").val(),
+        parentData.end_care_date = $("#end_care_date").val()
 
     console.log(parentData)
     
@@ -183,7 +183,6 @@ function submitParent(Parent) {
 }
 
 
-// These have to be executed with on.click function
 
 
 
