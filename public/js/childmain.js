@@ -53,7 +53,7 @@ $("#btn-add1").click(function () {
         gender: $("#gender").val(),
         race: $("#race").val(),
         doc_name: $("#doctor_name").val(),
-        doc_adddress: $("#doctor_address").val(),
+        doc_address: $("#doctor_address").val(),
         doc_phone: $("#doctor_phone").val(),
         hospital_pref: $("#hospital_pref").val(),
         arrive_time: $("#arrive_time").val(),
@@ -64,7 +64,6 @@ $("#btn-add1").click(function () {
         potty: $("#potty").val(),
         classroom: $("#classroom").val(),
         school_attend: $("#school_attend").val(),
-        potty: $("#potty").val(),
         enroll_date: $("#enroll_date").val()
     };
 
