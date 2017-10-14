@@ -459,6 +459,8 @@
               <button type="button" id="btn-add4" class="btn btn-primary">
                 <span class="glyphicon glyphicon-ok"></span>Save Enroll Information</button>
             </div>
+            <button type="button" id="btn-add4" class="btn btn-secondary">
+              <a id="linkBtn" href="/transaction">Transaction</a>
           </div>
 
         </div>
@@ -489,8 +491,8 @@
     document.getElementById('customButton').addEventListener('click', function (e) {
       // Open Checkout with further options:
       handler.open({
-        name: 'Demo Site',
-        description: '2 widgets',
+        name: 'Dawning Years',
+        description: 'confirm payment',
         amount: 10000
       });
       e.preventDefault();

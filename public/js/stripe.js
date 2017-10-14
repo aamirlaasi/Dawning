@@ -8,14 +8,18 @@ var token = request.body.stripeToken; // Using Express
 
 // Charge the user's card:
 stripe.charges.create({
-    amount: 1000,
-    currency: "usd",
-    description: "Example charge",
-    source: token,
-  }, function(err, charge) {
-    // asynchronously called
-    console.log("I've stolen your credit card information! haha");
-    console.log(token);
-  });
+  amount: 1000,
+  currency: "usd",
+  description: "Example charge",
+  source: token,
+}, function (err, charge) {
+  // asynchronously called
+  console.log("I've stolen your credit card information! haha");
+  console.log(token);
+  console.log(charge);
+});
 
-
+$(document).ready(function () {
+  $("#email").append(stripe.email);
+  $("#amount").append(stripe.amount);
+});    

@@ -22,7 +22,7 @@ module.exports = function (app) {
     // Home route also loads index.html
     app.get("/Home", function (req, res) {
         res.sendFile(path.join(__dirname, "../views/index.html"));
-    });    
+    });
 
     // Registration route loads childmain.html where user will can enter child/parent information.
     app.get("/Registration", function (req, res) {
@@ -35,7 +35,7 @@ module.exports = function (app) {
     });
 
     // About route loads About.html
-    app.get("/About", function(req,res){
+    app.get("/About", function (req, res) {
         res.sendFile(path.join(__dirname, "../views/about.html"))
     })
 
@@ -50,7 +50,7 @@ module.exports = function (app) {
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     // app.get("/members", isAuthenticated, function (req, res) {
-        // res.sendFile(path.join(__dirname, "../public/members.html"));
+    // res.sendFile(path.join(__dirname, "../public/members.html"));
     // });
 
     //});
@@ -58,5 +58,10 @@ module.exports = function (app) {
     // app.get("/add", function (req, res) {
     //     res.sendFile(path.join(__dirname, "../public/add.html"));
     // });
+
+    // Home route also loads index.html
+    app.get("/transaction", function (req, res) {
+        res.sendFile(path.join(__dirname, "../views/transaction.html"));
+    });
 
 };

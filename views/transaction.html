@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../public/css/style.css">
+    <script src="../public/js/stripe.js"></script>
     <title>Document</title>
 </head>
 
@@ -18,9 +19,14 @@
             <h1 class="mx-auto">Transaction</h1>
         </div>
         <div class="card">
-            <div class="card-body">
-                doot
+            <div class="card-body" id="email">
             </div>
+            <div class="card-body" id="amount">
+            </div>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="btn-add4" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok"></span>Confirm Payment</button>
         </div>
     </div>
 </body>
