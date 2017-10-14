@@ -18,12 +18,21 @@
   "homepage": "https://github.com/aamirlaasi/Dawning#readme",
   "dependencies": {
     "@datafire/squareup": "^2.0.4",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "datafire": "^2.16.1",
     "express": "^4.16.1",
+    "express-session": "^1.15.6",
     "install": "^0.10.1",
     "mysql2": "^1.4.2",
     "npm": "^5.4.2",
+<<<<<<< HEAD
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^4.13.8"
+=======
+    "sequelize": "^4.13.8",
+    "stripe": "^5.1.1"
+>>>>>>> 19e83a22c383dd613f97baa93c08db3dac1976b4
   }
 }

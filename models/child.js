@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Child = sequelize.define("child", {
     child_LASTNAME: {
       type: DataTypes.STRING,
