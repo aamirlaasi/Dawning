@@ -72,35 +72,43 @@ $("#btn-add1").click(function () {
 
 });
 
-
+// When the second "Save and Continue" button is clicked
+// add medical information to the childData object 
 $("#btn-add2").click(function () {
 
+    // Hide the first part of the form
     $("#frst1").hide();
+    // Hide the medical information form
     $("#al1").hide();
+    // Show the third page of the form for parent information
     $("#pg3").show();
-
-
+    // Add medical 
     childData.allergy = $("#allergies").val(),
-        childData.allergy_response = $("#allergy_response").val(),
-        childData.medical_condition_1 = $("#medical_condition_1").val(),
-        childData.medical_response_1 = $("#medical_response_1").val(),
-        childData.drug_list = $("#drug_list").val(),
-        childData.drug_response = $("#drug_response").val(),
-        childData.behave = $("#behave").val(),
-        childData.behave_response = $("#behave_response").val(),
-        childData.other_conditions = $("#other_conditions").val()
+    childData.allergy_response = $("#allergy_response").val(),
+    childData.medical_condition_1 = $("#medical_condition_1").val(),
+    childData.medical_response_1 = $("#medical_response_1").val(),
+    childData.drug_list = $("#drug_list").val(),
+    childData.drug_response = $("#drug_response").val(),
+    childData.behave = $("#behave").val(),
+    childData.behave_response = $("#behave_response").val(),
+    childData.other_conditions = $("#other_conditions").val()
 
     console.log(childData)
 
 });
 
+// When the third "Save and Continue" button is clicked
+// create the parentData object to store parent information
 $("#btn-add3").click(function () {
 
+    // Hide the first three forms
     $("#frst1").hide();
     $("#al1").hide();
     $("#pg3").hide();
+    // Show the payment form
     $("#pg4").show();
 
+    // Add parent information to parentData object
     parentData = {
         address: $("#address").val(),
         city: $("#city").val(),
@@ -135,29 +143,35 @@ $("#btn-add3").click(function () {
 
 $("#btn-add4").click(function () {
 
+    // Need to clarify what information we want to show when
+    // the last button is clicked
     $("#frst1").hide();
     $("#al1").hide();
     $("#pg3").show();
 
 
     parentData.tuition_amt = $("#tuition_amt").val(),
-        parentData.pay_frequency = $("#pay_frequency").val(),
-        parentData.pay_credit = $("#pay_credit").val(),
-        parentData.start_date = $("#start_date").val(),
-        parentData.authorize_date = $("#authorize_date").val(),
-        parentData.end_care_date = $("#end_care_date").val()
+    parentData.pay_frequency = $("#pay_frequency").val(),
+    parentData.pay_credit = $("#pay_credit").val(),
+    parentData.start_date = $("#start_date").val(),
+    parentData.authorize_date = $("#authorize_date").val(),
+    parentData.end_care_date = $("#end_care_date").val()
 
     console.log(parentData)
     
     // Send child information to the database
     submitChild(childData);
+    // Send parent information to the database
+    // This is not the right place to execute this call
+    // submitParent(parentData);
 });
 
 // Submits a new child and brings user to addchild page upon completion
 function submitChild(Child) {
     $.post("/api/child/", Child, function() {
       // Run this with either child or parent but not both.
-      window.location.href = "/addchild";
+      // Create a page that says Registration Complete!
+      window.location.href = "/Registration";
     });
 }
 
@@ -165,12 +179,12 @@ function submitChild(Child) {
 function submitParent(Parent) {
     $.post("/api/parent/", Parent, function() {
       // Run this with either child or parent but not both.
-        window.location.href = "/addchild";
+        window.location.href = "/Registration";
     });
 }
 
 
 // These have to be executed with on.click function
-// submitParent(parentData);
+
 
 
