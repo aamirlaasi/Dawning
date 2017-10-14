@@ -12,8 +12,6 @@ $('.selectpicker').selectpicker({
     size: 10
 });
 
-
-
 function myFunction() {
 
     var x = document.getElementById("child_last_name");
@@ -33,15 +31,10 @@ function myFunction() {
 };
 
 
-
-
 $("#btn-add1").click(function () {
 
     $("#frst1").hide();
     $("#al1").show();
-    // var splittedFormData = $("#myyform").serialize().split('&');
-
-    // console.log(splittedFormData)
 
     childData = {
         child_last_name: $("#child_last_name").val(),
@@ -63,24 +56,11 @@ $("#btn-add1").click(function () {
         school_attend: $("#school_attend").val(),
         potty: $("#potty").val(),
         enroll_date: ("#enroll_date").val()
-
-
     };
 
     console.log(childData)
 
-
 });
-
-
-
-
-
-
-
-
-
-
 
 
 $("#btn-add2").click(function () {
@@ -100,23 +80,7 @@ $("#btn-add2").click(function () {
         childData.behave_response = $("#behave_response").val(),
         childData.other_conditions = $("#other_conditions").val()
 
-
-
     console.log(childData)
-
-
-
-
-  console.log(newChild);
-
-  // Submits a new child and brings user to addchild page upon completion
-  function submitChild(Child) {
-    $.post("/api/child/", Child, function() {
-      window.location.href = "/addchild";
-    });
-  }
-
-  submitChild(newChild);
 
 });
 
@@ -159,11 +123,6 @@ $("#btn-add3").click(function () {
 });
 
 
-
-
-
-
-
 $("#btn-add4").click(function () {
 
     $("#frst1").hide();
@@ -178,12 +137,29 @@ $("#btn-add4").click(function () {
         parentData.authorize_date = $("#authorize_date").val(),
         parentData.end_care_date = $("#end_care_date").val()
 
-
-
-
     console.log(parentData)
 
-
-
-
 });
+
+// Submits a new child and brings user to addchild page upon completion
+function submitChild(Child) {
+    $.post("/api/child/", Child, function() {
+      // Run this with either child or parent but not both.
+      window.location.href = "/addchild";
+    });
+}
+
+// Submits a new parent and brings user to addchild page upon completion
+function submitParent(Parent) {
+    $.post("/api/parent/", Parent, function() {
+      // Run this with either child or parent but not both.
+        window.location.href = "/addchild";
+    });
+}
+
+
+// These have to be executed with on.click function
+// submitChild(childData);
+// submitParent(parentData);
+
+

@@ -1,0 +1,357 @@
+<<<<<<< HEAD
+
+$(document).ready(function(){
+	$("#dontsee").hide();
+	$("#al1").hide();
+	$("#al2").hide();
+	$("#al3").hide();
+	$("#al4").hide();
+	$("#medques").hide();
+	$("#drugques").hide();
+	$("#otrques").hide();
+    $("#allergyyes").click(function(){
+    	console.log("jss")
+        $("#al1").show();
+    });
+});
+
+    $("#allergyno").click(function(){
+    	console.log("jss")
+        $("#medques").show();
+    });
+
+     $("#moal1").click(function(){
+    	console.log("jss")
+        $("#al2").show();
+    });
+  $("#moal2").click(function(){
+    	console.log("jss")
+        $("#al3").show();
+    });
+
+ $("#moal3").click(function(){
+    	console.log("jss")
+        $("#al4").show();
+          $("#medques").show();
+    });
+
+$('.selectpicker').selectpicker({
+  size: 10
+});
+
+
+
+
+function myFunction() {
+    var x = document.getElementById("child_last_name");
+    x.value = x.value.toUpperCase();
+ var x = document.getElementById("child_first_name");
+    x.value = x.value.toUpperCase();
+ var x = document.getElementById("child_last_name");
+    x.value = x.value.toUpperCase();
+ var x = document.getElementById("child_last_name");
+    x.value = x.value.toUpperCase();
+ var x = document.getElementById("doctor_name");
+    x.value = x.value.toUpperCase();
+ var x = document.getElementById("doctor_address");
+    x.value = x.value.toUpperCase();
+
+
+
+
+
+
+
+
+}
+
+// Need to add event.preventDefault() and validation
+// for missing entries
+$("#btn-add").click(function(){
+
+    var text = document.getElementById("child_last_name").innerHTML;
+    document.getElementById("child_last_name").innerHTML = text.toUpperCase();
+
+ //$("#btn-add").click(function(){
+
+    console.log(text)
+
+//var wasup = $('#myyform').serialize();
+//console.log($('#myyform').serialize());
+
+//console.log(wasup)
+
+ //var jsonArray = [];
+
+   var splittedFormData = $("#myyform").serialize().split('&');
+
+  //          $.each(splittedFormData, function (key, value) {
+
+    //            item = {};
+    //          var splittedValue = value.split('=');               
+    //           item["name"] = splittedValue[0];
+    ///          item["value"] = splittedValue[1];
+    //         jsonArray.push(item);
+
+      //      });
+
+//   console.log(jsonArray)
+
+
+   console.log(splittedFormData);
+  // ...this is where we’d actually do something with the form data...
+  console.log(splittedFormData[0]);
+  
+  // This is a test....need to create a loop to go through
+  // all the data in the form
+  var formDataFinal = [];
+  for (var i = 0; i < splittedFormData.length; i++) {
+    formDataFinal[i] = splittedFormData[i].substring(splittedFormData[i].indexOf("=") + 1).trim();
+  }
+  console.log(formDataFinal);
+  console.log(formDataFinal[0]);
+
+  // Constructing a newChild object to hand to the database
+  var newChild = {
+    child_LASTNAME: formDataFinal[0],
+    CHILD_FIRSTNAME: formDataFinal[1],
+    // CHILD_MIDDLEINT: "",
+    BIRTHDAY: formDataFinal[2]
+    // CLASSROOM: FormDataFinal[13].val().trim(),
+    // SCHOOL: FormDataFinal[14].val().trim(),
+    // ENROLL_DATE: "",
+    // DROP_DATE: "",
+    // TEACHER: "",
+    // DOCTOR_NAME: FormDataFinal[5].val().trim(),
+    // DOCTOR_ADDRESS: FormDataFinal[6].val().trim(),
+    // DOCTOR_PHONE: FormDataFinal[7].val().trim(),
+    // HOSPITAL_PREF: FormDataFinal[8].val().trim(),
+    // GENDER: FormDataFinal[3].val().trim(),
+    // RACE: FormDataFinal[4].val().trim(),
+    // ALLERGY_1: "",        
+    // ALLERGY_2: "",        
+    // ALLERGY_3: "",        
+    // ALLERGY_4: "",        
+    // ALLERGY_5: "",
+    // ALLERGY_RESOLVE_1: "",
+    // ALLERGY_RESOLVE_2: "",
+    // ALLERGY_RESOLVE_3: "",
+    // ALLERGY_RESOLVE_4: "",
+    // ALLERGY_RESOLVE_5: "",              
+    // MEDICAL_CONDITION_1: "",
+    // MEDICAL_CONDITION_2: "",
+    // MEDICAL_CONDITION_3: "",
+    // MEDICAL_CONDITION_4: "",
+    // MEDICAL_CONDITION_5: "",
+    // SPECIAL_BEHAVIORS: "",
+    // CHILD_ARRIVAL_TIME: "",
+    // CHILD_DEPARTURE_TIME: "",
+    // ATTEND_DAY_MONDAY: "",
+    // ATTEND_DAY_TUESDAY: "",
+    // ATTEND_DAY_WEDNESDAY: "",
+    // ATTEND_DAY_THURSDAY: "",
+    // ATTEND_DAY_FRIDAY: "",
+    // ATTEND_DAY_SATURDAY: "",
+    // ATTEND_DAY_SUNDAY: "",
+    // MEDIA_PERMISSION: "",
+    // TRANSPORTATION_PERMISSION_SCHOOL: "",
+    // TRANSPORTATION_PERMISSION_EMER: "",
+    // TRANSPORTATION_PERMISSION_HOME: "",
+    // iMMUNIZATION_RECORDS: "",
+    // COMMENTS: "",
+    // HEALTH_STATEMENT: ""
+      
+    // add other data here
+  };
+
+  console.log(newChild);
+
+  // Submits a new child and brings user to addchild page upon completion
+  function submitChild(Child) {
+    $.post("/api/child/", Child, function() {
+      window.location.href = "/addchild";
+    });
+  }
+
+  submitChild(newChild);
+
+=======
+$(document).ready(function () {
+
+    $("#al1").hide();
+    $("#pg3").hide();
+    $("#pg4").hide();
+});
+
+var childData = {};
+var parentData = {};
+
+$('.selectpicker').selectpicker({
+    size: 10
+});
+
+
+
+function myFunction() {
+
+    var x = document.getElementById("child_last_name");
+    x.value = x.value.toUpperCase();
+
+    var x = document.getElementById("child_first_name");
+    x.value = x.value.toUpperCase();
+
+    var x = document.getElementById("hospital_pref");
+    x.value = x.value.toUpperCase();
+
+    var x = document.getElementById("doctor_name");
+    x.value = x.value.toUpperCase();
+
+    var x = document.getElementById("doctor_address");
+    x.value = x.value.toUpperCase();
+};
+
+
+
+
+$("#btn-add1").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").show();
+    // var splittedFormData = $("#myyform").serialize().split('&');
+
+    // console.log(splittedFormData)
+
+    childData = {
+        child_last_name: $("#child_last_name").val(),
+        child_first_name: $("#child_first_name").val(),
+        child_birth: $("#child_birth").val(),
+        gender: $("#gender").val(),
+        race: $("#race").val(),
+        doc_name: $("#doctor_name").val(),
+        doc_adddress: $("#doctor_address").val(),
+        doc_phone: $("#doctor_phone").val(),
+        hospital_pref: $("#hospital_pref").val(),
+        arrive_time: $("#arrive_time").val(),
+        depart_time: $("#depart_time").val(),
+        foptime: $("#foptime").val(),
+        attenddays: $("#attenddays").val(),
+        meals: $("#meals").val(),
+        potty: $("#potty").val(),
+        classroom: $("#classroom").val(),
+        school_attend: $("#school_attend").val(),
+        potty: $("#potty").val(),
+        enroll_date: ("#enroll_date").val()
+
+
+    };
+
+    console.log(childData)
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+$("#btn-add2").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").hide();
+    $("#pg3").show();
+
+
+    childData.allergy = $("#allergies").val(),
+        childData.allergy_response = $("#allergy_response").val(),
+        childData.medical_condition_1 = $("#medical_condition_1").val(),
+        childData.medical_response_1 = $("#medical_response_1").val(),
+        childData.drug_list = $("#drug_list").val(),
+        childData.drug_response = $("#drug_response").val(),
+        childData.behave = $("#behave").val(),
+        childData.behave_response = $("#behave_response").val(),
+        childData.other_conditions = $("#other_conditions").val()
+
+
+
+    console.log(childData)
+
+
+
+
+});
+
+$("#btn-add3").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").hide();
+    $("#pg3").hide();
+    $("#pg4").show();
+
+    parentData = {
+        address: $("#address").val(),
+        city: $("#city").val(),
+        zip: $("#zip").val(),
+        parent_last_name: $("#parent_last_name").val(),
+        parent_first_name: $("#parent_first_name").val(),
+        parent1_phone_1: $("#parent1_phone_1").val(),
+        parent1_phone_2: $("#parent1_phone_2").val(),
+        parent2_last_name: $("#parent2_last_name").val(),
+        parent2_first_name: $("#parent2_first_name").val(),
+        parent2_phone_1: $("#parent2_phone_1").val(),
+        parent2_phone_2: $("#parent2_phone_2").val(),
+        emergency1_name: $("#emergency1_name").val(),
+        emergency1_address: $("#emergency1_address").val(),
+        emergency1_phone_1: $("#emergency1_phone_1").val(),
+        emergency1_phone_2: $("#emergency1_phone_2").val(),
+        emergency2_name: $("#emergency2_name").val(),
+        emergency2_phone_1: $("#emergency2_phone_1").val(),
+        emergency2_phone_2: $("#emergency2_phone_2").val(),
+        emergency3_name: $("#emergency3_name").val(),
+        emergency3_phone_1: $("#emergency3_phone_1").val(),
+        emergency3_phone_2: $("#emergency3_phone_2").val(),
+        emergency4_name: $("#emergency4_name").val(),
+        emergency4_phone_1: $("#emergency4_phone_1").val(),
+        emergency4_phone_2: $("#emergency4_phone_2").val()
+    }
+
+    console.log(parentData)
+
+});
+
+
+
+
+
+
+
+$("#btn-add4").click(function () {
+
+    $("#frst1").hide();
+    $("#al1").hide();
+    $("#pg3").show();
+
+
+    parentData.tuition_amt = $("#tuition_amt").val(),
+        parentData.pay_frequency = $("#pay_frequency").val(),
+        parentData.pay_credit = $("#pay_credit").val(),
+        parentData.start_date = $("#start_date").val(),
+        parentData.authorize_date = $("#authorize_date").val(),
+        parentData.end_care_date = $("#end_care_date").val()
+
+
+
+
+    console.log(parentData)
+
+
+
+
+>>>>>>> beeaa479dce09e8b81db2df6fb552d08850715aa
+});
