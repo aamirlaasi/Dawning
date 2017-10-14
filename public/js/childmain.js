@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $("#al1").hide();
     $("#pg3").hide();
     $("#pg4").hide();
