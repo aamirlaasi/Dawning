@@ -1,10 +1,15 @@
 $(document).ready(function () {
 
+    // Hide the div that asks for the child's medical information
     $("#al1").hide();
+    // Hide the div that asks for child's address and parents' information
     $("#pg3").hide();
+    // Hide the div that asks for payment information
     $("#pg4").hide();
 });
 
+// Create objects that will store child and parent data to be 
+// passed on to the mysql database
 var childData = {};
 var parentData = {};
 
@@ -12,6 +17,8 @@ $('.selectpicker').selectpicker({
     size: 10
 });
 
+
+// This function capitalizes all entries to the form
 function myFunction() {
 
     var x = document.getElementById("child_last_name");
@@ -30,12 +37,15 @@ function myFunction() {
     x.value = x.value.toUpperCase();
 };
 
-
+// When the first "Save and Continue" button is clicked
+// create the childData object to store user information
 $("#btn-add1").click(function () {
 
+    // Hide the first part of the form that was just filled out
     $("#frst1").hide();
+    // Show the medical information form
     $("#al1").show();
-
+    // Create object to store information entered in the first form
     childData = {
         child_last_name: $("#child_last_name").val(),
         child_first_name: $("#child_first_name").val(),
@@ -55,7 +65,7 @@ $("#btn-add1").click(function () {
         classroom: $("#classroom").val(),
         school_attend: $("#school_attend").val(),
         potty: $("#potty").val(),
-        enroll_date: ("#enroll_date").val()
+        enroll_date: $("#enroll_date").val()
     };
 
     console.log(childData)
