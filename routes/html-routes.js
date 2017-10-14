@@ -19,6 +19,11 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../views/index.html"));
     });
 
+    // Home route also loads index.html
+    app.get("/Home", function (req, res) {
+        res.sendFile(path.join(__dirname, "../views/index.html"));
+    });    
+
     // Registration route loads childmain.html where user will can enter child/parent information.
     app.get("/Registration", function (req, res) {
         res.sendFile(path.join(__dirname, "../views/childmain.html"));
