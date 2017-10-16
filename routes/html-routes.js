@@ -7,7 +7,6 @@
 
 
 var path = require("path");
-var stripe = require("stripe")("pk_test_pS1AgpHyxfjsqwB6Ltl1uYAJ");
 
 // ROUTES
 // =============================================================
@@ -48,6 +47,10 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
+    app.get("/Charges", function (req, res) {
+        res.sendFile(path.join(__dirname, "../views/charges.html"))
+    })
+
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
     // app.get("/members", isAuthenticated, function (req, res) {
@@ -64,28 +67,4 @@ module.exports = function (app) {
     // app.get("/transaction", function (req, res) {
     //     res.sendFile(path.join(__dirname, "../views/transaction.html"));
     // });
-
-    app.get("/paysuccess", function (req, res) {
-        res.sendFile(path.join(__dirname, "../views/transaction.html"));
-    });
-
-    app.post("/charge", function (req, res) {
-        var token = req.body.stripeToken;
-        var chargeAmount = req.body.chargeAmount;
-        var charge = stripe.charges.create({
-            amount: chargeAmount,
-            currency: "USD",
-            source: token
-        }, function (err, charge) {
-            if (err & err.type === "StripeCardError") {
-                console.log("Your card has declined");
-            };
-        });
-        console.log(token);
-        console.log(chargeAmount);
-        console.log(charge);
-        console.log("Your payment was successful!");
-        res.redirect("/paysuccess");
-    });
-
 };

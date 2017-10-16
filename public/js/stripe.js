@@ -23,3 +23,15 @@
 //   $("#email").append(stripe.email);
 //   $("#amount").append(stripe.amount);
 // });    
+
+var stripe = require("stripe")(
+  "sk_test_he0NSUz4h5opevwrLvhS3RUL"
+);
+
+stripe.charges.list(
+  { limit: 3 },
+  function (err, charges) {
+    // asynchronously called
+    console.log(charges);
+  }
+);

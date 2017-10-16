@@ -188,6 +188,20 @@ module.exports = function (app) {
     console.log("Your payment was successful!");
     res.redirect("/paysuccess");
   });
+
+  app.get("/charges", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/charges.html"));
+    stripe.charges.list(
+      { limit: 1 },
+      function (err, charges) {
+        // asynchronously called
+        console.log(charges.data[0].id);
+        console.log(charges.data[0].amount);
+        console.log(charges.data[0].source.last4);
+        console.log(charges.data[0].source.name);
+      }
+    );
+  })
 }
 
 
