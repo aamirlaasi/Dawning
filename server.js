@@ -7,6 +7,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
+var stripe = require("stripe")("pk_test_pS1AgpHyxfjsqwB6Ltl1uYAJ");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
@@ -41,8 +42,8 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: false }).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync({ force: false }).then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });
