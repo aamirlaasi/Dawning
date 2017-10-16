@@ -199,14 +199,13 @@ module.exports = function (app) {
         console.log(charges.data[0].amount);
         console.log(charges.data[0].source.last4);
         console.log(charges.data[0].source.name);
-      }
-    );
-  })
+        var receipt = {
+          id: charges.data[0].id,
+          amount: charges.data[0].amount,
+          last4: charges.data[0].source.last4,
+          email: charges.data[0].source.name
+        }
+        console.log(receipt);
+      });
+  });
 }
-
-
-
-
-
-
-
