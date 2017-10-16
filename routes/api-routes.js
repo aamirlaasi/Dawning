@@ -27,29 +27,36 @@ module.exports = function(app){
   			// TEACHER: req.body.TEACHER,
   			DOCTOR_NAME: req.body.doc_name,
   			DOCTOR_ADDRESS: req.body.doc_address,
-  			DOCTOR_PHONE: req.body.doctor_phone,
+  			DOCTOR_PHONE: req.body.doc_phone,
   			HOSPITAL_PREF: req.body.hospital_pref,
   			GENDER: req.body.gender,
-  			RACE: req.body.race
-  			// ALLERGY_1: req.body.ALLERGY_1,    		
+  			RACE: req.body.race,
+  			ALLERGY_1: req.body.allergy,    		
   			// ALLERGY_2: req.body.ALLERGY_2,    		
   			// ALLERGY_3: req.body.ALLERGY_3,    		
   			// ALLERGY_4: req.body.ALLERGY_4,    		
   			// ALLERGY_5: req.body.ALLERGY_5,
-  			// ALLERGY_RESOLVE_1: req.body.ALLERGY_RESOLVE_1,
+  			ALLERGY_RESOLVE_1: req.body.allergy_response,
   			// ALLERGY_RESOLVE_2: req.body.ALLERGY_RESOLVE_2,
   			// ALLERGY_RESOLVE_3: req.body.ALLERGY_RESOLVE_3,
   			// ALLERGY_RESOLVE_4: req.body.ALLERGY_RESOLVE_4,
   			// ALLERGY_RESOLVE_5: req.body.ALLERGY_RESOLVE_5,			    		
-  			// MEDICAL_CONDITION_1: req.body.MEDICAL_CONDITION_1,
+  			MEDICAL_CONDITION_1: req.body.medical_condition_1,
   			// MEDICAL_CONDITION_2: req.body.MEDICAL_CONDITION_2,
   			// MEDICAL_CONDITION_3: req.body.MEDICAL_CONDITION_3,
   			// MEDICAL_CONDITION_4: req.body.MEDICAL_CONDITION_4,
   			// MEDICAL_CONDITION_5: req.body.MEDICAL_CONDITION_5,
-  			// SPECIAL_BEHAVIORS: req.body.SPECIAL_BEHAVIORS,
-  			// CHILD_ARRIVAL_TIME: req.body.CHILD_ARRIVAL_TIME,
-  			// CHILD_DEPARTURE_TIME: req.body.CHILD_DEPARTURE_TIME,
-  			// ATTEND_DAY_MONDAY: req.body.ATTEND_DAY_MONDAY,
+  			SPECIAL_BEHAVIORS: req.body.behave,
+        BEHAVIOR_RESPONSE: req.body.behave_response,
+  			MEDICAL_RESPONSE_1: req.body.medical_response_1,
+        DRUG_LIST: req.body.drug_list,
+        DRUG_RESPONSE: req.body.drug_response,
+        OTHER_CONDITIONS: req.body.other_conditions,
+        CHILD_ARRIVAL_TIME: req.body.arrive_time,
+  			CHILD_DEPARTURE_TIME: req.body.depart_time,
+  			FOPTIME: req.body.foptime,
+        POTTY: req.body.potty
+     //    ATTEND_DAY_MONDAY: req.body.attenddays[0],
   			// ATTEND_DAY_TUESDAY: req.body.ATTEND_DAY_TUESDAY,
   			// ATTEND_DAY_WEDNESDAY: req.body.ATTEND_DAY_WEDNESDAY,
   			// ATTEND_DAY_THURSDAY: req.body.ATTEND_DAY_THURSDAY,
@@ -67,6 +74,47 @@ module.exports = function(app){
     	.then(function(dbChild){
     		res.json(dbChild);
     	});
+    });
+
+    // POST route for saving new parent information
+    app.post("/api/parent", function(req, res) {
+      console.log(req.body);
+      db.PARENT.create({
+        PRIM_PARENT_LASTNAME:req.body.parent_last_name,
+        PRIM_PARENT_FIRSTNAME: req.body.parent_first_name,
+        PRIM_PARENT_PHONE_1: req.body.parent1_phone_1,
+        PRIM_PARENT_PHONE_2: req.body.parent1_phone_2,
+        // PRIM_PARENT_EMAIL: req.body.parent1_email,
+        SEC_PARENT_LASTNAME: req.body.parent2_last_name,
+        SEC_PARENT_FIRSTNAME: req.body.parent2_first_name,
+        SEC_PARENT_PHONE_1: req.body.parent2_phone_1,
+        SEC_PARENT_PHONE_2: req.body.parent2_phone_2,
+        ADDRESS: req.body.address,
+        CITY: req.body.city,
+        ZIP: req.body.zip,
+        EMR_CONTACT1_NAME: req.body.emergency1_name,
+        EMR_CONTACT1_PHONE1: req.body.emergency1_phone_1,
+        EMR_CONTACT1_PHONE2: req.body.emergency1_phone_2,
+        EMR_CONTACT1_ADDRESS: req.body.emergency1_address,
+        EMR_CONTACT2_NAME: req.body.emergency2_name,
+        EMR_CONTACT2_PHONE1: req.body.emergency2_phone_1,
+        EMR_CONTACT2_PHONE2: req.body.emergency2_phone_2,
+        EMR_CONTACT3_NAME: req.body.emergency3_name,
+        EMR_CONTACT3_PHONE1: req.body.emergency3_phone_1,
+        EMR_CONTACT3_PHONE2: req.body.emergency3_phone_2,
+        EMR_CONTACT4_NAME: req.body.emergency4_name,
+        EMR_CONTACT4_PHONE1: req.body.emergency4_phone_1,
+        EMR_CONTACT4_PHONE2: req.body.emergency4_phone_2,
+        // NCI_TERM_DATE: , 
+        PAY_FREQUENCY: req.body.pay_frequency,
+        START_DATE: req.body.start_date,
+        TUITION_AMOUNT: req.body.tuition_amt,
+        AUTHORIZE_DATE: req.body.authorize_date,
+        END_CARE_DATE: req.body.end_care_date    
+      })
+      .then(function(dbParent){
+        res.json(dbParent);
+      });
     });
 
     app.post("/api/login", passport.authenticate("local"), function(req, res) {
