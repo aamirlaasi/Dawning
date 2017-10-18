@@ -7,7 +7,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var stripe = require("stripe")("pk_test_pS1AgpHyxfjsqwB6Ltl1uYAJ");
+
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
@@ -37,7 +37,6 @@ app.use(express.static("views"));
 // =============================================================
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-
 
 
 // Syncing our sequelize models and then starting our Express app

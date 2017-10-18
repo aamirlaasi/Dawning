@@ -10,6 +10,10 @@ var db = require("../models");
 var passport = require("../config/passport");
 var stripe = require("stripe")("sk_test_he0NSUz4h5opevwrLvhS3RUL");
 var path = require("path");
+var mongo = require("mongodb").MongoClient;
+var assert = require("assert");
+
+var url = "mongodb://localhost:27017/test";
 
 // ROUTES
 // =============================================================
@@ -195,10 +199,6 @@ module.exports = function (app) {
       { limit: 1 },
       function (err, charges) {
         // asynchronously called
-        console.log(charges.data[0].id);
-        console.log(charges.data[0].amount);
-        console.log(charges.data[0].source.last4);
-        console.log(charges.data[0].source.name);
         var receipt = {
           id: charges.data[0].id,
           amount: charges.data[0].amount,
@@ -206,6 +206,30 @@ module.exports = function (app) {
           email: charges.data[0].source.name
         }
         console.log(receipt);
+        mongo.connect(url, function (err, db) {
+          assert.equal(null, err);
+          db.collection("user-data").insertOne(receipt, function (err, res) {
+            assert.equal(null, err);
+            console.log("Receipt inserted");
+            db.close();
+          })
+        })
       });
   });
-}
+
+  app.get("/receipt", function (req, res) {
+    var resultArray = [];
+    mongo.connect(url, function (err, db) {
+      assert.equal(null, err);
+      var cursor = db.collection("user-data").find();
+      cursor.forEach(function (doc, err) {
+        assert.equal(null, err);
+        resultArray.push(doc);
+      }, function () {
+        db.close();
+        res.json(resultArray);
+        console.log(resultArray);
+      });
+    });
+  });
+}  
