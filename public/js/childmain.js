@@ -2,12 +2,57 @@ $(document).ready(function () {
 
     // Hide the div that asks for the child's medical information
     $("#al1").hide();
+        $("#al2").hide();
+            $("#al3").hide();
+                $("#al4").hide();
     // Hide the div that asks for child's address and parents' information
     $("#pg3").hide();
     // Hide the div that asks for payment information
     $("#pg4").hide();
+     // Hide the div that asks for payment information
+    $("#pg2").hide();
+        $("#pg1").hide();
+            $("#pg5").hide();
 });
 
+$("#btn-enr").click(function () {
+
+    // Hide the first part of the form that was just filled out
+    $("#intro").hide();
+        $("#pg1").show();
+});
+
+$("#btn-pg2").click(function () {
+
+    // Hide the first part of the form that was just filled out
+    $("#pg1").hide();
+        $("#pg2").show();
+});
+
+$("#btn-pg3").click(function () {
+
+    // Hide the first part of the form that was just filled out
+    $("#pg2").hide();
+        $("#pg3").show();
+});
+$("#btn-pg5").click(function () {
+
+    // Hide the first part of the form that was just filled out
+    $("#pg4").hide();
+        $("#pg5").show();
+});
+
+$("#btn-allgno").click(function () {
+
+    // Hide the first part of the form that was just filled out
+    $("#pg3").hide();
+        $("#pg4").show();
+});
+$("#btn-allgyes").click(function () {
+
+    // Hide the first part of the form that was just filled out
+        $("#al1").show();
+});
 // Create objects that will store child and parent data to be 
 // passed on to the mysql database
 var childData = {};

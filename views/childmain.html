@@ -19,8 +19,8 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-  <script src="/js/childmain.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
+  <script src="../public/js/childmain.js"></script>
+  <link rel="stylesheet" href="../public/css/style.css">
 </head>
 
 <body>
@@ -31,241 +31,245 @@
     <div class="container">
       <div class="break"></div>
 
-      <div class="panel">
-        <div class="panel-heading panel-custom">
-          <h3>Child Information</h3>
-        </div>
 
-        <div class="panel-body">
+<div id="intro" class="form-group">
 
-          <div id="frst1" class="form-group">
-
-            <div class="form-group col-md-12">
-              <div class="form-group col-md-3">
-                <label>Last Name:</label>
-                <input type="text" class="form-control" name="child_last_name" id="child_last_name" onkeyup="myFunction()" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>First Name:</label>
-                <input type="text" class="form-control" name="child_first_name" id="child_first_name" onkeyup="myFunction()" required>
-              </div>
-              <div class="form-group col-md-2">
-                <label>Birthday:</label>
-                <input type="date" class="form-control" placeholder="mm/dd/yyyy" name="child_birth" id="child_birth" required>
-              </div>
+ <div class="panel panel-primary">
+      <div class="panel-heading">Parent Portal Validataion</div>
+          <div class="panel-body">
 
 
-              <div class="form-group col-md-2">
-                <label>Gender:</label>
-                <select class="form-control" name="gender" id="gender">
-                  <option></option>
-                  <option>Male</option>
-                  <option>Female</option>
-                  <option>Other</option>
-                </select>
-              </div>
+<div class="form-group col-md-12">
+ <h4 class="text-center">Validate Yourself</h4>
+</div>
 
+<div class="form-group col-md-3">
+    <label>Email:</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required>
+    <div class="help-block with-errors"></div>
+</div>
 
-              <div class="form-group col-md-2">
-                <label>Race:</label>
-                <select class="form-control" name="race" id="race">
-                  <option></option>
-                  <option>Black</option>
-                  <option>White</option>
-                  <option>Asian</option>
-                  <option>Hispanic</option>
-                  <option>Eastern</option>
-                  <option>Other</option>
-                </select>
-              </div>
+<div class="form-group col-md-2">
+    <label>Password:</label>
+    <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+    <div class="help-block">Minimum 6 characters</div>
+</div>
 
+<div class="form-group col-md-2"">
+    <label>Reenter Password:</label>
+    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+    <div class="help-block with-errors"></div>
+</div>
+   
+      </div>   
+
+    </div>
+
+    <div class="btn-group" role="group">
+              <button type="button" id="btn-enr" class="btn btn-primary">Enrollment Form</button>
             </div>
 
+    <div class="btn-group" role="group">
+              <button type="button" id="btn-pay" class="btn btn-primary">Payment Information</button>
+            </div>
+</div>
 
-            <div class="form-group col-md-12">
-              <div class="form-group col-md-3">
-                <label>Doctor Name:</label>
-                <input type="text" class="form-control" name="doctor_name" id="doctor_name" onkeyup="myFunction()" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Doctor Address:</label>
-                <input type="text" class="form-control" name="doctor_address" id="doctor_address" onkeyup="myFunction()" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Doctor Phone:</label>
-                <input type="text" class="form-control" id="doctor_phone" required>
-              </div>
-              <div class="form-group col-md-3">
-                <label>Emergency Hospital Preference:</label>
-                <input type="text" class="form-control" name="hospital_pref" id="hospital_pref" onkeyup="myFunction()" required>
-              </div>
 
+<div id="pg1" class="form-group">
+
+ <div class="panel panel-primary">
+      <div class="panel-heading">Child Enrollment Form</div>
+          <div class="panel-body">
+
+<div class="form-group col-md-12">
+ <h4 class="text-center">Specific Child Information</h4>
+</div>
+
+
+<div class="form-group col-md-12">
+ <div class="form-group col-md-1"></div>
+  <div class="form-group col-md-3">
+    <label>Enroll Date:</label>
+    <input type="date" class="form-control" name="enroll_date" id="enroll_date" required>
+  </div>
+  <div class="form-group col-md-4"></div>
+</div>
+
+
+
+<div class="form-group col-md-12">
+
+ <div class="form-group col-md-3">
+    <label>Last Name:</label>
+    <input type="text" class="form-control" name="child_last_name" id="child_last_name" onkeyup="myFunction()" required>
+ </div>
+ <div class="form-group col-md-3">
+     <label>First Name:</label>
+     <input type="text" class="form-control" name="child_first_name" id="child_first_name" onkeyup="myFunction()" required>
+ </div>     
+ <div class="form-group col-md-2">
+    <label>Childs Birthday:</label>
+    <input type="date" class="form-control" placeholder="mm/dd/yyyy" name="child_birth" id="child_birth" required>
+  </div>  
+<div class="form-group col-md-2">
+  <label>Gender:</label>
+  <select class="form-control" name="gender" id="gender">
+  <option></option>
+  <option>Male</option>
+  <option>Female</option>
+  <option>Other</option>
+  </select>
+</div>
+<div class="form-group col-md-2">
+  <label>Race:</label>
+  <select class="form-control" name="race" id="race">
+  <option></option>
+  <option>Black</option>
+  <option>White</option>
+  <option>Asian</option>
+  <option>Hispanic</option>
+  <option>Eastern</option>
+  <option>Other</option>
+  </select>  
+</div>
+
+
+</div>
+
+ <div class="form-group col-md-12">
+ <div class="form-group col-md-3">
+   <label>Childs Typical Arrival Time:</label>
+   <select class="form-control selectpicker show-tick" title="Arrive Time" id="arrive_time" required>
+     <option>6:00</option>
+     <option>7:00</option>
+     <option>8:00</option>
+     <option>9:00</option>
+     <option>9:30</option>
+   </select>
+ </div>
+
+ <div class="form-group col-md-3">
+   <label>Child Typical Departure Time:</label>
+   <select class="form-control selectpicker show-tick" title="Depart Time" id="depart_time" required>
+     <option>1:00</option>
+     <option>2:00</option>
+     <option>3:00</option>
+     <option>4:00</option>
+     <option>5:00</option>
+     <option>6:00</option>
+     <option>6:30</option>
+   </select>
+ </div>
+      
+ <div class="form-group col-md-3 selectContainer">
+   <label>Days Child Attends</label>
+   <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Days" id="attenddays">
+     <option>Mon</option>
+     <option>Tues</option>
+     <option>Wed</option>
+     <option>Thurs</option>
+     <option>Fri</option>
+   </select>
+ </div>
+
+ <div class="form-group col-md-3 selectContainer">
+   <label>Meals Child Will Participate:</label>
+   <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Meals" id="meals">
+     <option>Breakfast</option>
+     <option>AM Snack</option>
+     <option>Lunch</option>
+     <option>PM Snack</option>
+   </select>
+ </div>
+ 
+</div>
+
+ <div class="form-group col-md-12">
+ <div class="form-group col-md-3">
+   <label>Doctor Name:</label>
+   <input type="text" class="form-control" name="doctor_name" id="doctor_name" onkeyup="myFunction()" required>
+ </div>
+ <div class="form-group col-md-3">
+   <label>Doctor Address:</label>
+   <input type="text" class="form-control" name="doctor_address" id="doctor_address" onkeyup="myFunction()" required>
+ </div>
+ <div class="form-group col-md-3">
+   <label>Doctor Phone:</label>
+   <input type="text" class="form-control" id="doctor_phone" required>
+ </div>
+ <div class="form-group col-md-3">
+   <label>Emergency Hospital Preference:</label>
+   <input type="text" class="form-control" name="hospital_pref" id="hospital_pref" onkeyup="myFunction()" required>
+ </div>
+
+  </div>
+
+ <div class="form-group col-md-12">
+  <div class="form-group col-md-3 selectContainer">
+    <label>Completly Potty Trained</label>
+    <select class="form-control selectpicker show-tick" title="Potty Trained" id="potty">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-3 selectContainer">
+    <label>Class Room</label>
+    <select class="form-control selectpicker show-tick" title="Class Room" id="classroom">
+      <option>Infant Room</option>
+      <option>Transitional</option>
+      <option>Two Year Olds</option>
+      <option>Three Year Olds</option>
+      <option>PreSchool</option>
+      <option>After School</option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-3 selectContainer">
+    <label>School Child Attends</label>
+    <select class="form-control selectpicker show-tick" title="School Attends" id="school_attend">
+      <option>Whidby</option>
+      <option>Foster</option>
+      <option>Thompson</option>
+      <option>Bastian</option>
+      <option>Kipp Peace</option>
+      <option>Young</option>
+    </select>
+  </div>
+
+<div class="form-group col-md-3 selectContainer">
+  <label>Part / Full Day</label>
+  <select class="form-control selectpicker show-tick" title="Full or Part Time" id="foptime">
+  <option>Part Day</option>
+  <option>Full Day</option>
+  </select>
+</div>
+            
             </div>
 
-            <div class="form-group col-md-12">
-              <div class="form-group col-md-2">
-                <label>Child Arrival Time:</label>
-                <select class="form-control selectpicker show-tick" title="Arrive Time" id="arrive_time" required>
-                  <option>6:00</option>
-                  <option>7:00</option>
-                  <option>8:00</option>
-                  <option>9:00</option>
-                  <option>9:30</option>
-                </select>
-              </div>
+</div>
+</div>
 
-
-              <div class="form-group col-md-2">
-                <label>Child Departure Time:</label>
-                <select class="form-control selectpicker show-tick" title="Depart Time" id="depart_time" required>
-                  <option>1:00</option>
-                  <option>2:00</option>
-                  <option>3:00</option>
-                  <option>4:00</option>
-                  <option>5:00</option>
-                  <option>6:00</option>
-                  <option>6:30</option>
-                </select>
-              </div>
-
-
-              <div class="form-group col-md-2 selectContainer">
-                <label>Part / Full Day</label>
-                <select class="form-control selectpicker show-tick" title="Full or Part Time" id="foptime">
-                  <option>Part Day</option>
-                  <option>Full Day</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-3 selectContainer">
-                <label>Days Child Attends</label>
-                <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Days" id="attenddays">
-                  <option>Mon</option>
-                  <option>Tues</option>
-                  <option>Wed</option>
-                  <option>Thurs</option>
-                  <option>Fri</option>
-                </select>
-              </div>
-
-
-              <div class="form-group col-md-3 selectContainer">
-                <label>Meals Child Will Participate:</label>
-                <select class="selectpicker multiple data-selected-text-format show-tick" multiple title="Choose Meals" id="meals">
-                  <option>Breakfast</option>
-                  <option>AM Snack</option>
-                  <option>Lunch</option>
-                  <option>PM Snack</option>
-                </select>
-
-              </div>
-
+ <div class="btn-group" role="group">
+              <button type="button" id="btn-pg2" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok"></span>Save Go To Next Page</button>
             </div>
-
-            <div class="form-group col-md-12">
-
-              <div class="form-group col-md-3 selectContainer">
-                <label>Completly Potty Trained</label>
-                <select class="form-control selectpicker show-tick" title="Potty Trained" id="potty">
-                  <option>Yes</option>
-                  <option>No</option>
-                </select>
-              </div>
-
-              <div class="form-group col-md-3 selectContainer">
-                <label>Class Room</label>
-                <select class="form-control selectpicker show-tick" title="Class Room" id="classroom">
-                  <option>Infant Room</option>
-                  <option>Transitional</option>
-                  <option>Two Year Olds</option>
-                  <option>Three Year Olds</option>
-                  <option>PreSchool</option>
-                  <option>After School</option>
-                </select>
-              </div>
+</div>
 
 
 
-              <div class="form-group col-md-3 selectContainer">
-                <label>School Child Attends</label>
-                <select class="form-control selectpicker show-tick" title="School Attends" id="school_attend">
-                  <option>Whidby</option>
-                  <option>Foster</option>
-                  <option>Thompson</option>
-                  <option>Bastian</option>
-                  <option>Kipp Peace</option>
-                  <option>Young</option>
-                </select>
-              </div>
 
+<div id="pg2" class="form-group">
 
-              <div class="form-group col-md-3">
-                <label>Enroll Date:</label>
-                <input type="date" class="form-control" name="enroll_date" id="enroll_date" required>
-              </div>
+ <div class="panel panel-primary">
+      <div class="panel-heading">Child Enrollment Form</div>
+  <div class="panel-body">
 
-            </div>
+<div class="form-group col-md-12">
+ <h4 class="text-center">Parents and Contacts Information</h4>
+</div>
 
-            <div class="btn-group" role="group">
-              <button type="button" id="btn-add1" class="btn btn-primary">
-                <span class="glyphicon glyphicon-ok"></span>Save and Continue</button>
-            </div>
-
-
-
-          </div>
-
-          <div id="al1" class="form-group col-md-12">
-
-            <div class="form-group col-md-6">
-              <label>Detail Any Known Allergies Your Child Has, Or Enter NONE:</label>
-              <input type="text" class="form-control" name="allergies" id="allergies" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label>How Should We Respond:</label>
-              <input type="text" class="form-control" id="allergy_response" name="allergy_response" onkeyup="myFunction()">
-            </div>
-            <div class="form-group col-md-6">
-              <label>Detail Any Know Medical Conditions Your Child Has, Or Enter NONE:</label>
-              <input type="text" class="form-control" id="medical_condition_1" name="medical_condition_1" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label>How Should We Respond:</label>
-              <input type="text" class="form-control" id="medical_response_1" name="medical_response_1" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label>List Any Drugs Your Child Is Taking Consistantly, Or Enter NONE:</label>
-              <input type="text" class="form-control" id="drug_list" name="drug_list" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label>How Should We Respond In Case Of Adverse Action:</label>
-              <input type="text" class="form-control" id="drug_response" name="drug_response" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label>Detail Behavioral Issues We Should Be Aware Of, Or Enter NONE:</label>
-              <input type="text" class="form-control" id="behave" name="behave" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-6">
-              <label>How Should We Respond When These Issues Arrise:</label>
-              <input type="text" class="form-control" id="behave_response" name="behave_response" onkeyup="myFunction()" required>
-            </div>
-            <div class="form-group col-md-12">
-              <label>List Any Other Special Conditions Your Child May Have:</label>
-              <input type="text" class="form-control" id="other_conditions" name="other_conditions" onkeyup="myFunction()" required>
-            </div>
-
-            <div class="btn-group" role="group">
-              <button type="button" id="btn-add2" class="btn btn-primary">
-                <span class="glyphicon glyphicon-ok"></span>Save and Continue</button>
-            </div>
-
-          </div>
-
-
-
-          <div id="pg3">
-
-            <div class="form-group col-md-12">
+             <div class="form-group col-md-12">
 
               <div class="form-group col-md-4">
                 <label>Child Address:</label>
@@ -282,6 +286,7 @@
               <div class="form-group col-md-3"></div>
             </div>
 
+            
             <div class="form-group col-md-12">
               <div class="form-group col-md-3">
                 <label>Parent Last Name:</label>
@@ -321,13 +326,20 @@
               </div>
             </div>
 
+<div class="form-group col-md-12">
+ <h4 class="text-center">Emergency Contacts Information</h4>
+</div>
             <div class="form-group col-md-12">
-              <div class="form-group col-md-4">
-                <label>Primary Emergency Contact Full Name:</label>
+              <div class="form-group col-md-3">
+                <label>Primary Contact Full Name:</label>
                 <input type="text" class="form-control" name="emergency1_name" id="emergency1_name" onkeyup="myFunction()" required>
               </div>
-              <div class="form-group col-md-4">
-                <label>Emergency Contact Address:</label>
+              <div class="form-group col-md-2">
+                <label>Relationship:</label>
+                <input type="text" class="form-control" name="emergency1_relationship" id="emergency1_relationship" onkeyup="myFunction()" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label>Contact Address:</label>
                 <input type="text" class="form-control" name="emergency1_address" id="emergency1_address" onkeyup="myFunction()" required>
               </div>
               <div class="form-group col-md-2">
@@ -338,16 +350,18 @@
                 <label>Alternate Phone:</label>
                 <input type="text" class="form-control" name="emerency1_phone_2" id="emergency1_phone_2" required>
               </div>
-              <div class="form-group col-md-2">
-                <label>Email:</label>
-                <input type="text" class="form-control" name="email_address" id="email_address" required>
-              </div>
+             
             </div>
+
 
             <div class="form-group col-md-12">
               <div class="form-group col-md-4">
                 <label>Additional Contact Full Name:</label>
                 <input type="text" class="form-control" name="emergency2_name" id="emergency2_name" onkeyup="myFunction()" required>
+              </div>
+               <div class="form-group col-md-2">
+                <label>Relationship:</label>
+                <input type="text" class="form-control" name="emergency2_relationship" id="emergency2_relationship" onkeyup="myFunction()" required>
               </div>
               <div class="form-group col-md-2">
                 <label>Primary Phone:</label>
@@ -361,11 +375,18 @@
             </div>
 
 
+<div class="form-group col-md-12">
+ <h4 class="text-center">Persons Who May Pick Up Your Child</h4>
+</div>
 
             <div class="form-group col-md-12">
               <div class="form-group col-md-4">
-                <label>Additional Contact Full Name:</label>
+                <label>Person Full Name:</label>
                 <input type="text" class="form-control" name="emergency3_name" id="emergency3_name" onkeyup="myFunction()" required>
+              </div>
+               <div class="form-group col-md-2">
+                <label>Relationship:</label>
+                <input type="text" class="form-control" name="emergency3_relationship" id="emergency3_relationship" onkeyup="myFunction()" required>
               </div>
               <div class="form-group col-md-2">
                 <label>Primary Phone:</label>
@@ -380,8 +401,12 @@
 
             <div class="form-group col-md-12">
               <div class="form-group col-md-4">
-                <label>Additional Contact Full Name:</label>
+                <label>Person Full Name:</label>
                 <input type="text" class="form-control" name="emergency4_name" id="emergency4_name" onkeyup="myFunction()" required>
+              </div>
+               <div class="form-group col-md-2">
+                <label>Relationship:</label>
+                <input type="text" class="form-control" name="emergency4_relationship" id="emergency4_relationship" onkeyup="myFunction()" required>
               </div>
               <div class="form-group col-md-2">
                 <label>Primary Phone:</label>
@@ -393,22 +418,287 @@
               </div>
               <div class="form-group col-md-4"></div>
             </div>
-
-            <div class="btn-group" role="group">
-              <button type="button" id="btn-add3" class="btn btn-primary">
-                <span class="glyphicon glyphicon-ok"></span>Save and Continue</button>
+            <div class="form-group col-md-12">
+              <div class="form-group col-md-4">
+                <label>Person Full Name:</label>
+                <input type="text" class="form-control" name="emergency5_name" id="emergency5_name" onkeyup="myFunction()" required>
+              </div>
+               <div class="form-group col-md-2">
+                <label>Relationship:</label>
+                <input type="text" class="form-control" name="emergency5_relationship" id="emergency5_relationship" onkeyup="myFunction()" required>
+              </div>
+              <div class="form-group col-md-2">
+                <label>Primary Phone:</label>
+                <input type="text" class="form-control" name="emergency5_phone_1" id="emergency5_phone_1" required>
+              </div>
+              <div class="form-group col-md-2">
+                <label>Alternate Phone:</label>
+                <input type="text" class="form-control" name="emerency5_phone_2" id="emergency5_phone_2" required>
+              </div>
+              <div class="form-group col-md-4"></div>
             </div>
+</div>
+</div>
 
-          </div>
+ <div class="btn-group" role="group">
+              <button type="button" id="btn-pg3" class="btn btn-primary">Save and Go To Next Page</button>
+            </div>
+</div>
 
-          <div id="pg4">
+           
+
+<div id="pg3" class="form-group">
+
+ <div class="panel panel-primary">
+      <div class="panel-heading">Child Enrollment Form</div>
+ 
+  <div class="panel-body">
+
+<div class="form-group col-md-12">
+ <h3 class="text-center">Allergies</h3>
+</div>
+
+
+<div class="form-group col-md-12">
+<h4 class="text-center">Does Your Child Have Any Known Allergies:</h4>
+</div>
+
+<div class= "form-group col-md-3"></div>
+
+
+   <div class="btn-group col-md-3" role="group">
+      <button type="button" id="btn-allgno" class="btn btn-primary">No</button>
+   </div>
+
+
+   <div class="btn-group col-md-3" role="group">
+      <button type="button" id="btn-allgyes" class="btn btn-primary">Yes</button>
+   </div>
+
+<div class= "form-group col-md-3"></div>
+
+
+
+
+<div id="al1" class="form-group col-md-12">
+   <div class= "form-group col-md-2"></div>
+ <div class= "form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_1">
+    <option></option>
+    <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+    <option>Other</option>
+  </select>
+</div>
+  
+<div class="form-group col-md-5">
+ <label>How Should We Respond:</label>
+ <input type="text" class="form-control" id="allergy_response1">
+</div>
+
+<div class= "form-group col-md-3">
+<label>Any More Allergies:</label>
+<label class="radio-inline"><input type="radio" id ="allergyyes1" name="allergy1">Yes</label>
+<label class="radio-inline"><input type="radio" id ="allergyno1" name="allergy1">No</label>
+</div>
+
+</div>
+
+<div id="al2" class="form-group col-md-12">
+   <div class= "form-group col-md-2"></div>
+ <div class= "form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_2">
+    <option></option>
+    <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+    <option>Other</option>
+  </select>
+</div>
+  
+<div class="form-group col-md-5">
+ <label>How Should We Respond:</label>
+ <input type="text" class="form-control" id="allergy_response2">
+</div>
+
+<div class= "form-group col-md-3">
+<label>Any More Allergies:</label>
+<label class="radio-inline"><input type="radio" id ="allergyyes2" name="allergy2">Yes</label>
+<label class="radio-inline"><input type="radio" id ="allergyno2" name="allergy2">No</label>
+</div>
+
+</div>
+<div id="al3" class="form-group col-md-12">
+   <div class= "form-group col-md-2"></div>
+ <div class= "form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_3">
+    <option></option>
+    <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+    <option>Other</option>
+  </select>
+</div>
+  
+<div class="form-group col-md-5">
+ <label>How Should We Respond:</label>
+ <input type="text" class="form-control" id="allergy_response3">
+</div>
+
+<div class= "form-group col-md-3">
+<label>Any More Allergies:</label>
+<label class="radio-inline"><input type="radio" id ="allergyyes3" name="allergy2">Yes</label>
+<label class="radio-inline"><input type="radio" id ="allergyno3" name="allergy2">No</label>
+</div>
+
+</div>
+
+<div id="al4" class="form-group col-md-12">
+   <div class= "form-group col-md-2"></div>
+ <div class= "form-group col-md-2">
+  <label>Allergies:</label>
+  <select class="form-control" id="Allergy_4">
+    <option></option>
+    <option>Peanut</option>
+    <option>Dairy</option>
+    <option>Wheat</option>
+    <option>Citrus</option>
+    <option>Dust</option>
+    <option>Other</option>
+  </select>
+</div>
+  
+<div class="form-group col-md-5">
+ <label>How Should We Respond:</label>
+ <input type="text" class="form-control" id="allergy_response4">
+</div>
+
+<div class= "form-group col-md-3"></div>
+
+</div>
+
+</div>
+</div>
+
+ <div class="btn-group" role="group">
+              <button type="button" id="btn-pg4" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok"></span>Save and Go To Next Page</button>
+            </div>
+</div>
+
+
+
+<div id="pg4" class="form-group">
+
+ <div class="panel panel-primary">
+      <div class="panel-heading">Child Enrollment Form</div>
+  <div class="panel-body">
+
+<div class="form-group col-md-12">
+ <h4 class="text-center">Medical and Behavioral Information</h4>
+</div>
+
+<div class="form-group col-md-12">
+<div class= "form-group col-md-6">
+<label>Has Your Child been hospitalized or had a severe illness or injury in the past twelve months? :</label>
+<label class="radio-inline"><input type="radio" id ="hosyes" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="hosno" value = "no">No</label>
+</div>
+<div class= "form-group col-md-6">
+<label>Describe in detail the Situation and outcome:</label>
+<input type="text" class="form-control" id="hospital_injury" name="hospital_injury" onkeyup="myFunction()" required>
+</div>
+</div>
+
+<div class="form-group col-md-12">
+<div class= "form-group col-md-6">
+<label>Has Your child been examined within the past twelve months by a physician and can participate in a child day care program?:</label>
+<label class="radio-inline"><input type="radio" id ="drexyes" value = "yes">Yes</label>
+<label class="radio-inline"><input type="radio" id ="drexno" value = "no">No</label>
+</div>
+ <div class="form-group col-md-2">
+   <label>Doctor Name:</label>
+   <input type="text" class="form-control" name="doctor_name" id="doctor_name" onkeyup="myFunction()" required>
+ </div>
+ <div class="form-group col-md-2">
+   <label>Doctor Address:</label>
+   <input type="text" class="form-control" name="doctor_address" id="doctor_address" onkeyup="myFunction()" required>
+ </div>
+ <div class="form-group col-md-2">
+   <label>Doctor Phone:</label>
+   <input type="text" class="form-control" id="doctor_phone" required>
+ </div>
+</div>
+
+            <div class="form-group col-md-6">
+              <label>Detail Any Know Medical Conditions Your Child Has, Or Enter NONE:</label>
+              <input type="text" class="form-control" id="medical_condition_1" name="medical_condition_1" onkeyup="myFunction()" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label>How Should We Respond:</label>
+              <input type="text" class="form-control" id="medical_response_1" name="medical_response_1" onkeyup="myFunction()" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label>List Any Drugs Your Child Is Taking Consistantly, Or Enter NONE:</label>
+              <input type="text" class="form-control" id="drug_list" name="drug_list" onkeyup="myFunction()" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label>How Should We Respond In Case Of Adverse Action:</label>
+              <input type="text" class="form-control" id="drug_response" name="drug_response" onkeyup="myFunction()" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Detail Behavioral Issues We Should Be Aware Of, Or Enter NONE:</label>
+              <input type="text" class="form-control" id="behave" name="behave" onkeyup="myFunction()" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label>How Should We Respond When These Issues Arrise:</label>
+              <input type="text" class="form-control" id="behave_response" name="behave_response" onkeyup="myFunction()" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label>List Any Other Special Conditions Your Child May Have:</label>
+              <input type="text" class="form-control" id="other_conditions" name="other_conditions" onkeyup="myFunction()" required>
+            </div>
+</div>
+</div>
+
+ <div class="btn-group" role="group">
+              <button type="button" id="btn-pg5" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok"></span>Save and Go To Next Page</button>
+            </div>
+</div>
+
+
+
+<div id="pg5" class="form-group">
+
+ <div class="panel panel-primary">
+      <div class="panel-heading">Child Enrollment Form</div>
+  <div class="panel-body">
+
+<div class="form-group col-md-12">
+ <h4 class="text-center">Financial and Statistical Information</h4>
+</div>
+
 
             <div class="form-group col-md-12">
               <div class="form-group col-md-2">
                 <label>Tuition Amount:</label>
-                <input type="text" class="form-control" name="tuition_amt" id="tuition_amt" onkeyup="myFunction()" required>
+                <input type="number" class="form-control" name="tuition_amt" id="tuition_amt" onkeyup="myFunction()" required>
               </div>
-
+            <div class="form-group col-md-2">
+                <label>Initial Credit Amount:</label>
+                <input type="number" class="form-control" name="tuition_amt" id="tuition_amt" onkeyup="myFunction()" required>
+              </div>
               <div class="form-group col-md-2">
                 <label>Pay Frequency:</label>
                 <select class="form-control selectpicker" Title="Pay Frequency" name="pay_frequency" 
@@ -422,10 +712,7 @@
                 <label>Start Date:</label>
                 <input type="date" class="form-control" name="start_date" id="start_date" required>
               </div>
-              <div class="form-group col-md-3">
-                <label>Enroll Date:</label>
-                <input type="date" class="form-control" name="enroll_date" id="enroll_date" required>
-              </div>
+             
             </div>
             <div class="form-group col-md-12">
               <h3>Subsidy Information</h3>
@@ -438,25 +725,87 @@
                 <label>Co-Pay Amount:</label>
                 <input type="text" class="form-control" name="tuition_amt" id="tuition_amt" onkeyup="myFunction()" required>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-2">
                 <label>Start Date:</label>
                 <input type="date" class="form-control" name="authorize_date" id="authorize_date" required>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-md-2">
                 <label>End Date:</label>
                 <input type="date" class="form-control" name="end_care_date" id="end_care_date" required>
               </div>
-
-              <div class="form-group col-md-4"></div>
+              <div class="form-group col-md-2">
+                <label>Authorization Code:</label>
+                <input type="text" class="form-control" name="authorize_code" id="authorize_code" required>
+              </div>
+              <div class="form-group col-md-2">
+                <label>Contact Name:</label>
+                <input type="text" class="form-control" name="authorize_name" id="authorize_name" required>
+              </div>           
+              <div class="form-group col-md-2"></div>
             </div>
 
+   <div class="form-group col-md-12">
+   <h3>C A C F P</h3>
+   </div>
+
+  <div class="form-group col-md-12">
+ <div class="form-group col-md-2">
+  <label>Form Date:</label>
+  <input type="date" class="form-control" name="cacfp_date" id="cacfp_date">
+ </div>
+ <div class="form-group col-md-2">
+ <label>House Hold Income:</label>
+ <input type="number" class="form-control" name="cacfp_income" id="cacfp_income" required>
+ </div>
+ <div class="form-group col-md-2">
+  <label>Pay Frequency:</label>
+  <select class="form-control" name="cacfp_payfreq" id="cacfp_pay_freq">
+  <option></option>
+  <option>Weekly</option>
+  <option>BiWeekly</option>
+  <option>Monthly</option>
+  <option>BiMonthly</option>
+  <option>Annually</option>
+  </select>  
+</div>
+<div class="form-group col-md-2">
+  <label>House Hold Size:</label>
+  <select class="form-control" name="cacfp_household" id="cacfp_household">
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+  <option>6</option>
+  <option>7</option>
+  <option>8</option>
+  <option>9</option>
+  <option>10</option>
+  <option>11</option>
+  </select>  
+</div>
+<div class="form-group col-md-2">
+  <label>Status:</label>
+  <select class="form-control" name="cacfp_status" id="cacfp_status">
+  <option>Denied</option>
+  <option>Reduced</option>
+  <option>Free</option>
+  </select>  
+</div>
 
 
+ <div class="form-group col-md-2"></div>
+ 
+</div>
 
-            <div class="btn-group" role="group">
-              <button type="button" id="btn-add4" class="btn btn-primary">
-                <span class="glyphicon glyphicon-ok"></span>Save Enroll Information</button>
+
+</div>
+</div>
+
+ <div class="btn-group" role="group">
+              <button type="button" id="btn-all" class="btn btn-primary">
+                <span class="glyphicon glyphicon-ok"></span>Save All</button>
             </div>
+
           </div>
 
         </div>
@@ -465,7 +814,7 @@
 
 
   <a href="./index.html">HOME</a>
-  <script src="/js/childmain.js"></script>
+  <script src="../public/js/childmain.js"></script>
   <script src="https://checkout.stripe.com/checkout.js"></script>
   <button id="customButton">Purchase</button>
   <script>
